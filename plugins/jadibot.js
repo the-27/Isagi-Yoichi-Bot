@@ -5,7 +5,7 @@ import ws from 'ws';
 
 let handler = async (m, { conn: _envio, command, usedPrefix, args, text, isOwner}) => {
 
-let img = 'https://files.catbox.moe/7m1fbp.jpg'
+let img = 'https://files.catbox.moe/7m1fbp.jpg';
   
 const isCommand1 = /^(deletesesion|deletebot|deletesession|deletesesaion)$/i.test(command)  
 const isCommand2 = /^(stop|pausarai|pausarbot)$/i.test(command)  
