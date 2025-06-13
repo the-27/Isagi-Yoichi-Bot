@@ -6,7 +6,7 @@ var handler = async (m, { conn, args, usedPrefix, command }) => {
     }
 
     try {
-        await conn.reply(m.chat, `${emoji} Espere un momento, estoy descargando su video...`, m);
+        await conn.reply(m.chat, `*${emoji} Espere un momento, estoy descargando su video...*`, m);
 
         const tiktokData = await tiktokdl(args[0]);
 
@@ -17,7 +17,7 @@ var handler = async (m, { conn, args, usedPrefix, command }) => {
         const videoURL = tiktokData.data.play;
 
         if (videoURL) {
-            await conn.sendFile(m.chat, videoURL, "tiktok.mp4", `${emoji} Aquí tienes ฅ^•ﻌ•^ฅ`, m);
+            await conn.sendFile(m.chat, videoURL, "tiktok.mp4", `*${emoji5} Aquí tienes ฅ^•ﻌ•^ฅ*`, m);
         } else {
             return conn.reply(m.chat, "No se pudo descargar.", m);
         }
@@ -29,7 +29,7 @@ var handler = async (m, { conn, args, usedPrefix, command }) => {
 handler.help = ['tiktok'].map((v) => v + ' *<link>*');
 handler.tags = ['descargas'];
 handler.command = ['tiktok', 'tt'];
-handler.group = true;
+//handler.group = true;
 handler.register = true;
 handler.coin = 2;
 handler.limit = true;

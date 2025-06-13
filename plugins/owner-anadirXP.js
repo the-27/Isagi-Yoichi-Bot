@@ -35,6 +35,8 @@ const handler = async (m, { conn, text }) => {
     m.reply(`✨ XP Añadido: *${xp}* \n@${who.split('@')[0]}, recibiste ${xp} XP`, null, { mentions: [who] });
 };
 
+handler.help = ['añadirxp', 'addexp'];
+handler.tags = ['owner'];
 handler.command = ['añadirxp', 'addexp'];
 handler.rowner = true;
 

@@ -32,7 +32,7 @@ const isEmoji = (text) => {
 };
 
 handler.help = ['setemoji *<emoji>*'];
-handler.tags = ['group'];
+handler.tags = ['grupo'];
 handler.command = ['setemoji', 'setemo'];
 handler.admin = true;
 handler.group = true;

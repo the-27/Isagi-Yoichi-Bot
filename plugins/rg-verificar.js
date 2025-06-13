@@ -12,15 +12,22 @@ let handler = async function (m, { conn, text, usedPrefix, command }) {
   let pp = await conn.profilePictureUrl(who, 'image').catch((_) => 'https://files.catbox.moe/xr2m6u.jpg')
   let user = global.db.data.users[m.sender]
   let name2 = conn.getName(m.sender)
-  if (user.registered === true) return m.reply(`『✦』Ya estás registrado.\n\n*¿Quiere volver a registrarse?*\n\nUse este comando para eliminar su registro.\n*${usedPrefix}unreg*`)
-  if (!Reg.test(text)) return m.reply(`『✦』Formato incorrecto.\n\nUso del comamdo: *${usedPrefix + command} nombre.edad*\nEjemplo : *${usedPrefix + command} ${name2}.18*`)
+  if (user.registered) {
+    return conn.sendMessage(m.chat, {
+      text: `『✦』𝗬𝗮 𝗲𝘀𝘁𝗮𝘀 𝗿𝗲𝗴𝗶𝘀𝘁𝗿𝗮𝗱𝗼.\n\n¿𝗤𝘂𝗶𝗲𝗿𝗲𝘀 𝘃𝗼𝗹𝘃𝗲𝗿 𝗮 𝗿𝗲𝗴𝗶𝘀𝘁𝗿𝗮𝗿𝘁𝗲?\n\n𝘂𝘀𝗮 𝗲𝗹 𝗰𝗼𝗺𝗮𝗻𝗱𝗼 𝗽𝗮𝗿𝗮 𝗲𝗹𝗶𝗺𝗶𝗻𝗮𝗿 𝘀𝘂 𝗿𝗲𝗴𝗶𝘀𝘁𝗿𝗼.`,
+      footer: "🏔️ ISAGI - ULTRA ⚽",
+      buttons: [{ buttonId: `${usedPrefix}unreg`, buttonText: { displayText: '⋆🌿 ᥙᥒrᥱg'}, type: 1}],
+      headerType: 1
+}, { quoted: m});
+}
+  if (!Reg.test(text)) return m.reply(`『✦』𝙵𝙾𝚁𝙼𝙰𝚃𝙾 𝙸𝙽𝙲𝙾𝚁𝚁𝙴𝙲𝚃𝙾.\n\n𝚄𝚂𝙾 𝙳𝙴𝙻 𝙲𝙾𝙼𝙰𝙽𝙳𝙾: *${usedPrefix + command} nombre.edad*\n𝗘𝗝𝗘𝗠𝗣𝗟𝗢 : *${usedPrefix + command} ${name2}.18*`)
   let [_, name, splitter, age] = text.match(Reg)
-  if (!name) return m.reply(`『✦』El nombre no puede estar vacío.`)
-  if (!age) return m.reply(`『✦』La edad no puede estar vacía.`)
+  if (!name) return m.reply(`『✦』𝑬𝒍 𝒏𝒐𝒎𝒃𝒓𝒆 𝒏𝒐 𝒑𝒖𝒆𝒅𝒆 𝒆𝒔𝒕𝒂𝒓 𝒗𝒂𝒄𝒊𝒐.`)
+  if (!age) return m.reply(`『✦』𝑳𝒂 𝒆𝒅𝒂𝒅 𝒏𝒐 𝒑𝒖𝒆𝒅𝒆 𝒆𝒔𝒕𝒂𝒓 𝒗𝒂𝒄𝒊𝒂.`)
   if (name.length >= 100) return m.reply(`『✦』El nombre es demasiado largo.`)
   age = parseInt(age)
-  if (age > 1000) return m.reply(`『✦』Wow el abuelo quiere jugar al bot.`)
-  if (age < 5) return m.reply(`『✦』hay un abuelo bebé jsjsj.`)
+  if (age > 1000) return m.reply(`『✦』 *ʟᴀ ᴇᴅᴀᴅ ɪɴɢʀᴇsᴀᴅᴀ ᴇs ɪɴᴄᴏʀʀᴇᴄᴛᴀ*.`)
+  if (age < 5) return m.reply(`『✦』 *ʟᴀ ᴇᴅᴀᴅ ɪɴɢʀᴇsᴀᴅᴀ ᴇs ɪɴᴄᴏʀʀᴇᴄᴛᴀ*.`)
   user.name = name + '✓'.trim()
   user.age = age
   user.regTime = + new Date      
@@ -29,24 +36,25 @@ let handler = async function (m, { conn, text, usedPrefix, command }) {
   global.db.data.users[m.sender].exp += 300
   global.db.data.users[m.sender].joincount += 20
   let sn = createHash('md5').update(m.sender).digest('hex').slice(0, 20)
-let regbot = `✦ 𝗥 𝗘 𝗚 𝗜 𝗦 𝗧 𝗥 𝗔 𝗗 𝗢 ✦\n`
-regbot += `•┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄•\n`
-regbot += `> ᰔᩚ Nombre » ${name}\n`
-regbot += `> ✎ Edad » ${age} años\n`
-regbot += `•┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄•\n`
-regbot += `❀ 𝗥𝗲𝗰𝗼𝗺𝗽𝗲𝗻𝘀𝗮𝘀:\n`
-regbot += `> • ⛁ *${moneda}* » 40\n`
-regbot += `> • ✰ *Experiencia* » 300\n`
-regbot += `> • ❖ *Tokens* » 20\n`
-regbot += `•┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄•\n`
-regbot += `> ${dev}`
+let regbot = `╭━⭓ 〘 🅁🄴🄶🄸🅂🅃🅁🄰🄳🄾 〙↯\n`
+regbot += `│ *˚ ༘♡ ⋆｡˚ 𝓝𝓸𝓶𝓫𝓻𝓮* » ${name}\n`
+regbot += `│ *˚ ༘♡ ⋆｡˚ 𝓔𝓭𝓪𝓭* » ${age} años\n`
+regbot += `│======== • ✠ • ========\n`
+regbot += `│❂ 🎁 𝗥𝗲𝗰𝗼𝗺𝗽𝗲𝗻𝘀𝗮𝘀:\n`
+regbot += `│======== • ✠ • ========\n`
+regbot += `│├⛁ \`𝙲𝙾𝙸𝙽𝚂\`: 40\n`
+regbot += `│├✰ \`𝙴𝚇𝙿𝙴𝚁𝙸𝙴𝙽𝙲𝙸𝙰\`: 300\n`
+regbot += `│├❖ \`𝚃𝙾𝙺𝙴𝙽𝚂\`: 20\n`
+regbot += `│╰──────\n`
+regbot += `╰━━━━━━━━━━━━━━━━━┛\n`
+regbot += `> \`\`\`_🌴 Usa #𝗽𝗲𝗿𝗳𝗶𝗹 para ver tu perfil. 🔥_\`\`\``
 await m.react('📩')
 
 await conn.sendMessage(m.chat, {
         text: regbot,
         contextInfo: {
             externalAdReply: {
-                title: '✧ Usuario Verificado ✧',
+                title: '୧⍤⃝⋆⌣⋆ 𝑼𝒔𝒖𝒓𝒂𝒓𝒊𝒐 𝑽𝒆𝒓𝒆𝒇𝒊𝒄𝒂𝒅𝒐 ❛░⃟ ⃟°˟',
                 body: textbot,
                 thumbnailUrl: pp,
                 sourceUrl: channel,

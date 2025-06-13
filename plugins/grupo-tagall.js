@@ -1,12 +1,7 @@
-/* 
-- tagall By Angel-OFC  
-- etiqueta en un grupo a todos
-- https://whatsapp.com/channel/0029VaJxgcB0bIdvuOwKTM2Y
-*/
 const handler = async (m, { isOwner, isAdmin, conn, text, participants, args, command, usedPrefix }) => {
   if (usedPrefix == 'a' || usedPrefix == 'A') return;
 
-  const customEmoji = global.db.data.chats[m.chat]?.customEmoji || '🍫';
+  const customEmoji = global.db.data.chats[m.chat]?.customEmoji || '🔥';
   m.react(customEmoji);
 
   if (!(isAdmin || isOwner)) {
@@ -15,20 +10,26 @@ const handler = async (m, { isOwner, isAdmin, conn, text, participants, args, co
   }
 
   const pesan = args.join` `;
-  const oi = `*» INFO :* ${pesan}`;
-  let teks = `*!  MENCION GENERAL  !*\n  *PARA ${participants.length} MIEMBROS* 🗣️\n\n ${oi}\n\n╭  ┄ 𝅄 ۪꒰ \`⡞᪲=͟͟͞${botname} ≼᳞ׄ\` ꒱ ۟ 𝅄 ┄\n`;
+  const oi = `*⚽ » INFO :* ${pesan}`;
+  let teks = `   ╭━━⬣
+ ╭┤👑 *!  MENCION GENERAL  !*
+ ┃│🍬 *PARA ${participants.length} MIEMBROS*
+ ┃│ ${oi} 
+ ┃╰━━⬣
+ ╰════════⬣\n`;
   for (const mem of participants) {
-    teks += `┊${customEmoji} @${mem.id.split('@')[0]}\n`;
+    teks += `┃${customEmoji} @${mem.id.split('@')[0]}\n`;
   }
-  teks += `╰⸼ ┄ ┄ ┄ ─  ꒰  ׅ୭ *${vs}* ୧ ׅ ꒱  ┄  ─ ┄ ⸼`;
+  teks += `╰══⌬\n> ${dev}`;
 
   conn.sendMessage(m.chat, { text: teks, mentions: participants.map((a) => a.id) });
 };
 
 handler.help = ['todos *<mensaje opcional>*'];
-handler.tags = ['group'];
-handler.command = ['todos', 'invocar', 'tagall']
+handler.tags = ['grupo'];
+handler.command = ['todos', 'invocar', 'tagall', 'marcar']
 handler.admin = true;
 handler.group = true;
+handler.coin = 4; 
 
 export default handler;

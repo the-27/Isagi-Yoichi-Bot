@@ -33,6 +33,8 @@ const handler = async (m, {conn, usedPrefix, text}) => {
   };
 };
 
+handler.help = ['pvp']; 
+handler.tags = ['game']; 
 handler.command = ['suitpvp', 'pvp', 'suit'];
 handler.group = true;
 handler.register = true;

@@ -11,6 +11,8 @@ const handler = async (m, { conn, command, participants, text }) => {
     setTimeout(espera, 720000);
 
   };
+handler.help = ['let'];
+handler.tags = ['owner'];  
 handler.command = ['let'];
 handler.rowner = true;
 

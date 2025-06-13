@@ -4,6 +4,12 @@ import path, { join } from 'path'
 import ws from 'ws';
 
 let handler = async (m, { conn: _envio, command, usedPrefix, args, text, isOwner}) => {
+
+let img = [ 
+"https://qu.ax/wLRYM.jpg",
+"https://qu.ax/sqlKC.jpg"
+  ].getRandom()
+  
 const isCommand1 = /^(deletesesion|deletebot|deletesession|deletesesaion)$/i.test(command)  
 const isCommand2 = /^(stop|pausarai|pausarbot)$/i.test(command)  
 const isCommand3 = /^(bots|sockets|socket)$/i.test(command)   
@@ -37,7 +43,7 @@ break
 case isCommand2:
 if (global.conn.user.jid == conn.user.jid) conn.reply(m.chat, `${emoji} Si no es *Sub-Bot* comuníquese al numero principal del *Bot* para ser *Sub-Bot*.`, m)
 else {
-await conn.reply(m.chat, `${emoji} ${botname} desactivada.`, m)
+await conn.reply(m.chat, `${emoji} ${botname} desactivado.`, m)
 conn.ws.close()}  
 break
 
@@ -54,24 +60,36 @@ minutos %= 60;
 horas %= 24;
 var resultado = "";
 if (días !== 0) {
-resultado += días + " días, ";
+resultado += días + "D ";
 }
 if (horas !== 0) {
-resultado += horas + " horas, ";
+resultado += horas + "H ";
 }
 if (minutos !== 0) {
-resultado += minutos + " minutos, ";
+resultado += minutos + "M ";
 }
 if (segundos !== 0) {
-resultado += segundos + " segundos";
+resultado += segundos + "S";
 }
 return resultado;
 }
-const message = users.map((v, index) => `• 「 ${index + 1} 」\n📎 Wa.me/${v.user.jid.replace(/[^0-9]/g, '')}?text=${usedPrefix}estado\n👤 Usuario: ${v.user.name || 'Sub-Bot'}\n🕑 Online: ${ v.uptime ? convertirMsADiasHorasMinutosSegundos(Date.now() - v.uptime) : 'Desconocido'}`).join('\n\n__________________________\n\n');
-const replyMessage = message.length === 0 ? `No hay Sub-Bots disponible por el momento, verifique mas tarde.` : message;
+const message = users.map((v, index) => `
+╭━━━━━━━━━━━━━━━━╾
+┃╼⟪ SUB - BOT: \`${index + 1}\` ⟫╾
+┃ 🪀 *𝙐𝙎𝙐𝘼𝙍𝙄𝙊:* ${v.user.name || '𝐒𝐔𝐁 𝐁𝐎𝐓 ☘︎'}
+┃ 📘 *𝙊𝙉𝙇𝙄𝙉𝙀:* ${ v.uptime ? convertirMsADiasHorasMinutosSegundos(Date.now() - v.uptime) : 'Desconocido'}
+┃ 🧩 *𝙇𝙄𝙉𝙆:* wa.me/${v.user.jid.replace(/[^0-9]/g, '')}?text=${usedPrefix}estado
+╰━━▣`).join('\n\n');
+const replyMessage = message.length === 0 ? `No hay Sub-Bots disponible.` : message;
 const totalUsers = users.length;
-const responseMessage = `${emoji} LISTA DE *SUB-BOTS* ACTIVOS\n\n${emoji2} PUEDES PEDIR PERMISO PARA QUE TE DEJEN UNIR EL BOT A TÚ GRUPO\n\n\`\`\`CADA USUARIO SUB-BOT USA SUS FUNCIONES COMO QUIERA, EL NÚMERO PRINCIPAL NO SE HACE RESPONSABLE DEL USO DEL MAL USO DE ELLA \`\`\`\n\n*SUB-BOT CONECTADOS:* ${totalUsers || '0'}\n\n${replyMessage.trim()}`.trim();
-await _envio.sendMessage(m.chat, {text: responseMessage, mentions: _envio.parseMention(responseMessage)}, {quoted: m})
+const responseMessage = `
+⭑『 𝗦𝗨𝗕𝗕𝗢𝗧𝗦 𝗖𝗢𝗡𝗘𝗖𝗧𝗔𝗗𝗢𝗦 』⭑
+╭═━━━━━━━⬣
+┃ 🏔️ 𝐓𝐨𝐭𝐚𝐥: *${totalUsers ||'0'}*
+╰═━━━━━━━⬣\n
+${replyMessage.trim()}\n═══════◆◈◆═══════`.trim();
+
+await _envio.sendFile(m.chat, img, 'jadibot.jpg', responseMessage, m, null, fake, false, { mentions: _envio.parseMention(responseMessage) })
 break   
 }}
 

@@ -1,5 +1,5 @@
 {
-"name": "YukiBot-MD",
+"name": "Isagi-Yoichi",
 "version": "2.2.0",
 "description": "WhatsApp Bot Multi Device",
 "main": "index.js",
@@ -18,20 +18,20 @@
 "eslint": "eslint .",
 "eslintfix": "eslint --fix ."
 },
-"homepage": "https://github.com/The-King-Destroy/Yuki_Suou-Bot",
+"homepage": "https://github.com/the-27/Isagi-Yoichi-Bot",
 "author": {
-"name": "The-King-Destroy"
+"name": "the-27"
 },
 "repository": {
 "type": "git",
-"url": "git+https://github.com/The-King-Destroy/Yuki_Suou-Bot.git"
+"url": "git+https://github.com/the-27/Isagi-Yoichi-Bot.git"
 },
 "bugs": {
-"url": "https://github.com/The-King-Destroy/Yuki_Suou-Bot/issues"
+"url": "https://github.com/the-27/Isagi-Yoichi-Bot/issues"
 },
 "license": "MIT-License",
 "dependencies": {
-"@whiskeysockets/baileys": "github:nstar-y/bail",
+"@whiskeysockets/baileys": "npm:@izumi-xyz/meta",
 "@adiwajshing/keyed-db": "^0.2.4",
 "@bochilteam/scraper": "^4.2.4",
 "@bochilteam/scraper-sosmed": "^1.0.5",

@@ -14,6 +14,8 @@ const handler = async (m, {conn, isOwner}) => {
 `.trim();
   m.reply(caption, null, {mentions: conn.parseMention(caption)});
 };
+handler.help = ['banlist','listban'];
+handler.tags = ['owner'];
 handler.command = ['banlist','listban'];
 handler.rowner = true;
 

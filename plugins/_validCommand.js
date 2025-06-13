@@ -25,7 +25,7 @@ export async function before(m) {
     let user = global.db.data.users[m.sender];
     
     if (chat.isBanned) {
-      const avisoDesactivado = `《✦》El bot *${botname}* está desactivado en este grupo.\n\n> ✦ Un *administrador* puede activarlo con el comando:\n> » *${usedPrefix}bot on*`;
+      const avisoDesactivado = `《✦》𝑬𝒍 𝑩𝒐𝒕 *${botname}* 𝒆𝒔𝒕𝒂 𝒅𝒆𝒔𝒂𝒄𝒕𝒊𝒗𝒂𝒅𝒐 𝒆𝒏 𝒆𝒔𝒕𝒆 𝒈𝒓𝒖𝒑𝒐.\n\n> ✦ 𝑼𝒏 *𝒂𝒅𝒎𝒊𝒏𝒊𝒔𝒕𝒓𝒂𝒅𝒐𝒓* 𝒑𝒖𝒆𝒅𝒆 𝒂𝒄𝒕𝒊𝒗𝒂𝒓𝒍𝒐 𝒄𝒐𝒏 𝒆𝒍 𝒄𝒐𝒎𝒂𝒏𝒅𝒐:\n> » *${usedPrefix}bot on*`;
       await m.reply(avisoDesactivado);
       return;
     }
@@ -36,6 +36,17 @@ export async function before(m) {
     user.commands += 1;
   } else {
     const comando = m.text.trim().split(' ')[0];
-    await m.reply(`《✦》El comando *${comando}* no existe.\nPara ver la lista de comandos usa:\n» *#help*`);
+    await conn.sendMessage(m.chat, {
+      text: `${emoji} \`\`\`El comando ↷\`\`\`\n⇉🍃《 *${comando}* 》\n↬🍄‍🟫 *No existe.*\n⌦ 🔥 *Para ver la lista de comandos usa:*\n> 🍰 *#𝗺𝗲𝗻𝘂*`,
+      footer: `${dev}`,
+      buttons: [
+        {
+          buttonId: '.menu',
+          buttonText: { displayText: '📜 mᥱᥒᥙ 🌿'},
+          type: 1
+        }
+      ],
+      headerType: 1
+    }, { quoted: m});
   }
 }

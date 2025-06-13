@@ -26,6 +26,7 @@ const handler = async (m, { conn, text }) => {
         delete global.global.db.data.users[user];
         conn.sendMessage(m.chat, {text: `${done} Éxito Todos Los Datos Del User: @${userNumber} Ya Fuerón Eliminados De Mi Base De Datos.`, mentions: [user]}, {quoted: fkontak});
 };
+handler.help = ['restablecerdatos'];
 handler.tags = ['owner'];
 handler.command = ['restablecerdatos','deletedatauser','resetuser','borrardatos'];
 handler.rowner = true;

@@ -7,6 +7,8 @@ const handler = async (m, {conn, usedPrefix, text, command}) => {
   delete sticker[hash];
   m.reply(`${emoji} El texto/comando asignado al sticker/imagen fue eliminado de la base de datos correctamente.`);
 };
+handler.help = ['delcmd'];
+handler.tags = ['owner'];
 handler.command = ['delcmd'];
 handler.rowner = true;
 

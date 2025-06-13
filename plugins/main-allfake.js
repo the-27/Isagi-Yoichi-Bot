@@ -27,17 +27,17 @@ return res.data
 console.log(`Error : ${e}`)
 }}
   
-global.creador = 'wa.me/5212202410659'
+global.creador = 'Wa.me/51969214380'
 global.ofcbot = `${conn.user.jid.split('@')[0]}`
-global.namechannel = '=͟͟͞❀ 𝐘𝐮𝐤𝐢 𝐒𝐮𝐨𝐮 - 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 ⏤͟͟͞͞★'
-global.namechannel2 = '=͟͟͞❀ 𝐘𝐮𝐤𝐢 𝐒𝐮𝐨𝐮 - 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 ⏤͟͟͞͞★'
-global.namegrupo = 'ᰔᩚ ᥡᥙkі sᥙ᥆ᥙ • ᥆𝖿іᥴіᥲᥣ ❀'
-global.namecomu = 'ᰔᩚ ᥡᥙkіᑲ᥆𝗍-mძ • ᥴ᥆mᥙᥒі𝗍ᥡ ❀'
-global.listo = '❀ *Aquí tienes ฅ^•ﻌ•^ฅ*'
-global.fotoperfil = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://raw.githubusercontent.com/The-King-Destroy/Adiciones/main/Contenido/1745522645448.jpeg')
+global.namechannel = '𝒊𝒔𝒂𝒈𝒊 - ᏴϴͲ • ᥙ⍴ძᥲ𝗍ᥱs ⌺'
+global.namechannel2 = '𝒊𝒔𝒂𝒈𝒊 - ᏴϴͲ • ᥲ᥎іs᥆s ⌺'
+global.namegrupo = '𝒊𝒔𝒂𝒈𝒊 - ᏴϴͲ ᥆𝖿іᥴіᥲᥣ ⌺'
+global.namecomu = '𝒊𝒔𝒂𝒈𝒊 - ᏴϴͲ • ᥴ᥆mᥙᥒі𝗍ᥡ '
+global.listo = '*🌴 ＡＱＵＩ - ＴＩＥＮＥＳ*'
+global.fotoperfil = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://files.catbox.moe/n3f60j.jpg')
 
-global.canalIdM = ["120363416409380841@newsletter", "120363416409380841@newsletter"]
-global.canalNombreM = ["ᰔᩚ ᥡᥙkіᑲ᥆𝗍-mძ • ᥙ⍴ძᥲ𝗍ᥱs ❀", "ᰔᩚ ᥡᥙkіᑲ᥆𝗍-mძ • ᥲ᥎іs᥆s ❀"]
+global.canalIdM = ["120363417186717632@newsletter", "120363417186717632@newsletter"]
+global.canalNombreM = ["꧁𓊈𒆜𝑇𝐻𝐸 𝐵𝐿𝐴𝐶𝐾𒆜𓊉꧂ꦁ⃯ꫂ", "⏤͟͟͞͞𝕀𝕊𝔸𝔾𝕀-𝕐𝕆𝕀ℂℍ𝕀ᵇᵒᵗ⚽⃟ᰳᰬᰶ"]
 global.channelRD = await getRandomChannel()
 
 global.d = new Date(new Date + 3600000)
@@ -53,23 +53,23 @@ global.done = '✅'
 global.error = '✖️'
 global.msm = '⚠︎'
 
-global.emoji = '❀'
-global.emoji2 = '✧'
-global.emoji3 = '✦'
-global.emoji4 = '❍'
-global.emoji5 = '✰'
-global.emojis = [emoji, emoji2, emoji3, emoji4].getRandom()
+global.emoji = '( ꈍᴗꈍ)'
+global.emoji2 = '(◍•ᴗ•◍)'
+global.emoji3 = '(✿^‿^)'
+global.emoji4 = '(๑>ᴗ๑'
+global.emoji5 = '(◕‿◕✦'
+global.emojis = [emoji, emoji2, emoji3, emoji4, emoji5].getRandom()
 
-global.wait = '❍ Espera un momento, soy lenta...';
-global.waitt = '❍ Espera un momento, soy lenta...';
-global.waittt = '❍ Espera un momento, soy lenta...';
-global.waitttt = '❍ Espera un momento, soy lenta...';
+global.wait = '⚽ 𝗘𝘀𝗽𝗲𝗿𝗲 𝗨𝗻 𝗠𝗼𝗺𝗲𝗻𝘁𝗼, 𝗦𝗼𝘆 𝗟𝗲𝗻𝘁𝗼...';
+global.waitt = '⚽ 𝗘𝘀𝗽𝗲𝗿𝗲 𝗨𝗻 𝗠𝗼𝗺𝗲𝗻𝘁𝗼, 𝗦𝗼𝘆 𝗟𝗲𝗻𝘁𝗼...';
+global.waittt = '⚽ 𝗘𝘀𝗽𝗲𝗿𝗲 𝗨𝗻 𝗠𝗼𝗺𝗲𝗻𝘁𝗼, 𝗦𝗼𝘆 𝗟𝗲𝗻𝘁𝗼...';
+global.waitttt = '⚽ 𝗘𝘀𝗽𝗲𝗿𝗲 𝗨𝗻 𝗠𝗼𝗺𝗲𝗻𝘁𝗼, 𝗦𝗼𝘆 𝗟𝗲𝗻𝘁𝗼...';
 
-var canal = 'https://whatsapp.com/channel/0029VbAfPu9BqbrEMFWXKE0d'  
-var comunidad = 'https://chat.whatsapp.com/I0dMp2fEle7L6RaWBmwlAa'
-var git = 'https://github.com/The-King-Destroy'
-var github = 'https://github.com/The-King-Destroy/Yuki_Suou-Bot' 
-let correo = 'thekingdestroy507@gmail.com'
+var canal = 'https://whatsapp.com/channel/0029Vb6BDQc0lwgsDN1GJ31i'  
+var comunidad = ''
+var git = 'https://github.com/the-27'
+var github = 'https://github.com/the-27/Isagi-Yoichi-Bot'
+let correo = 'blackoficial2025@gmail.com'
 global.redes = [canal, comunidad, git, github, correo].getRandom()
 
 let category = "imagen"
@@ -98,7 +98,9 @@ global.fake = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo
 }}, { quoted: m }
 
 global.icono = [
-'https://raw.githubusercontent.com/The-King-Destroy/Adiciones/main/Contenido/1749731657991.jpeg',
+'https://files.catbox.moe/7m1fbp.jpg', //ya esta
+'https://files.catbox.moe/fcbeie.jpg',
+'https://files.catbox.moe/r0h0j5.jpg'
 ].getRandom()
 
 global.rcanal = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: channelRD.id, serverMessageId: 100, newsletterName: channelRD.name, }, externalAdReply: { showAdAttribution: true, title: packname, body: dev, mediaUrl: null, description: null, previewType: "PHOTO", thumbnailUrl: icono, sourceUrl: redes, mediaType: 1, renderLargerThumbnail: false }, }, }}

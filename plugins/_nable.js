@@ -15,7 +15,7 @@ const handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, i
     isEnable = false
 } else {
     const estado = isEnable ? '✓ Activado' : '✗ Desactivado'
-    return conn.reply(m.chat, `「✦」Un administrador puede activar o desactivar el *${command}* utilizando:\n\n> ✐ *${usedPrefix}${command} on* para activar.\n> ✐ *${usedPrefix}${command} off* para desactivar.\n\n✧ Estado actual » *${estado}*`, m)
+    return conn.reply(m.chat, `━━━━━━━━━━━━━━━━━━━━\n📜 Un administrador puede activar o desactivar el *${command}* utilizando:\n\n> ✐ *${usedPrefix}${command} on* - para activar.\n> ✐ *${usedPrefix}${command} off* - para desactivar.\n\n👾 Estado actual » *${estado}*\n━━━━━━━━━━━━━━━━━━━━`, m, rcanal)
   }
 
   switch (type) {
@@ -149,7 +149,31 @@ const handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, i
       }
       chat.nsfw = isEnable
       break
-
+  
+    case 'antitoxic': 
+    case 'antitoxicos':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn);
+          throw false;
+        }
+      }
+      chat.antitoxic = isEnable;
+      break;    
+      
+    case 'antilink2':
+     if (!m.isGroup) {
+       if (!isOwner) {
+          global.dfail('group', m, conn)
+          throw false
+       }
+     } else if (!isAdmin) {
+       global.dfail('admin', m, conn)
+       throw false
+     }
+     chat.antiLink2 = isEnable
+     break
+      
     case 'jadibotmd':
     case 'modejadibot':
       isAll = true
@@ -173,6 +197,16 @@ const handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, i
       }
       chat.detect = isEnable
       break
+      
+    case 'audios':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.audios = isEnable
+      break   
 
     case 'antilink':
       if (m.isGroup) {
@@ -197,11 +231,11 @@ const handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, i
   
   chat[type] = isEnable;
   
-  conn.reply(m.chat, `《✦》La función *${type}* se *${isEnable ? 'activó' : 'desactivó'}* ${isAll ? 'para este Bot' : isUser ? '' : 'para este chat'}`, m);
+  conn.reply(m.chat, `『✦』𝗟𝗔 𝗙𝗨𝗡𝗖𝗜𝗢𝗡「 *${type}* 」𝗦𝗘 *${isEnable ? '𝗔𝗖𝗧𝗜𝗩𝗢' : '𝗗𝗘𝗦𝗔𝗖𝗧𝗜𝗩𝗢'}* ${isAll ? '𝗣𝗔𝗥𝗔 𝗘𝗦𝗧𝗘 𝗕𝗢𝗧' : isUser ? '' : '𝗣𝗔𝗥𝗔 𝗘𝗦𝗧𝗘 𝗖𝗛𝗔𝗧'}`, m, rcanal);
 };
 
-handler.help = ['welcome', 'bienvenida', 'antiprivado', 'antiprivate', 'restrict', 'restringir', 'autolevelup', 'autonivel', 'antibot', 'antibots', 'autoaceptar', 'aceptarauto', 'autorechazar', 'rechazarauto', 'autoresponder', 'autorespond', 'antisubbots', 'antibot2', 'modoadmin', 'soloadmin', 'reaction', 'reaccion', 'nsfw', 'modohorny', 'antispam', 'jadibotmd', 'modejadibot', 'subbots', 'detect', 'avisos', 'antilink']
+handler.help = ['welcome', 'bienvenida', 'antiprivado', 'antiprivate', 'restrict', 'restringir', 'antibot', 'antibots', 'autoaceptar', 'aceptarauto', 'autorechazar', 'rechazarauto', 'autoresponder', 'autorespond', 'antisubbots', 'antibot2', 'modoadmin', 'soloadmin', 'reaction', 'reaccion', 'nsfw', 'modohorny', 'antispam', 'jadibotmd', 'modejadibot', 'subbots', 'detect', 'avisos', 'antilink', 'audios', 'antilink2', 'antitoxic', 'antitoxicos']
 handler.tags = ['nable'];
-handler.command = ['welcome', 'bienvenida', 'antiprivado', 'antiprivate', 'restrict', 'restringir', 'autolevelup', 'autonivel', 'antibot', 'antibots', 'autoaceptar', 'aceptarauto', 'autorechazar', 'rechazarauto', 'autoresponder', 'autorespond', 'antisubbots', 'antibot2', 'modoadmin', 'soloadmin', 'reaction', 'reaccion', 'nsfw', 'modohorny', 'antispam', 'jadibotmd', 'modejadibot', 'subbots', 'detect', 'avisos', 'antilink', 'antifake']
+handler.command = ['welcome', 'bienvenida', 'antiprivado', 'antiprivate', 'restrict', 'restringir', 'antibot', 'antibots', 'autoaceptar', 'aceptarauto', 'autorechazar', 'rechazarauto', 'autoresponder', 'autorespond', 'antisubbots', 'antibot2', 'modoadmin', 'soloadmin', 'reaction', 'reaccion', 'nsfw', 'modohorny', 'antispam', 'jadibotmd', 'modejadibot', 'subbots', 'detect', 'avisos', 'antilink', 'audios', 'antilink2', 'antitoxic', 'antitoxicos']
 
 export default handler

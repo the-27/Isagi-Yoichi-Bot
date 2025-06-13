@@ -16,6 +16,8 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
     }
 }
 
+handler.help = ['llama']
+handler.tags = ['ai']
 handler.command = ['llama', 'meta']
 
 export default handler

@@ -11,7 +11,7 @@ import fs, {readdirSync, statSync, unlinkSync, existsSync, mkdirSync, readFileSy
 import yargs from 'yargs';
 import {spawn} from 'child_process'
 import lodash from 'lodash'
-import { yukiJadiBot } from './plugins/jadibot-serbot.js'
+import { blackJadiBot } from './plugins/jadibot-serbot.js'
 import chalk from 'chalk'
 import syntaxerror from 'syntax-error'
 import {tmpdir} from 'os'
@@ -39,15 +39,15 @@ const PORT = process.env.PORT || process.env.SERVER_PORT || 3000
 
 let { say } = cfonts
 
-console.log(chalk.bold.redBright(`\n✰ Iniciando Yuki-Suou-Bot ✰\n`))
+console.log(chalk.bold.redBright(`\n⇏あ INICIANDO EL BOT....... ㊣\n`))
 
-say('YukiBot-MD', {
+say('ISAGI-BOT ⚽', {
 font: 'block',
 align: 'center',
 colors: ['magentaBright']
 })
 
-say(`Developed By • The-King-Destroy`, {
+say(`Developed By • THE.BLACK`, {
 font: 'console',
 align: 'center',
 colors: ['blueBright']
@@ -206,7 +206,7 @@ if (opcion == '1' || methodCodeQR) {
 console.log(chalk.bold.yellow(`\n❐ ESCANEA EL CÓDIGO QR EXPIRA EN 45 SEGUNDOS`))}
 }
 if (connection == 'open') {
-console.log(chalk.bold.green('\n❀ Yuki Suou Conectada con éxito ❀'))
+console.log(chalk.bold.green('\n🌴 Isagi Yoichi Conectado con éxito...⚽'))
 }
 let reason = new Boom(lastDisconnect?.error)?.output?.statusCode
 if (connection === 'close') {
@@ -283,7 +283,7 @@ return true
 
 global.rutaJadiBot = join(__dirname, './JadiBots')
 
-if (global.yukiJadibts) {
+if (global.blackJadibts) {
 if (!existsSync(global.rutaJadiBot)) {
 mkdirSync(global.rutaJadiBot, { recursive: true }) 
 console.log(chalk.bold.cyan(`La carpeta: ${jadi} se creó correctamente.`))
@@ -298,7 +298,7 @@ for (const gjbts of readRutaJadiBot) {
 const botPath = join(rutaJadiBot, gjbts)
 const readBotPath = readdirSync(botPath)
 if (readBotPath.includes(creds)) {
-yukiJadiBot({pathYukiJadiBot: botPath, m: null, conn, args: '', usedPrefix: '/', command: 'serbot'})
+blackJadiBot({pathBlackJadiBot: botPath, m: null, conn, args: '', usedPrefix: '/', command: 'serbot'})
 }
 }
 }

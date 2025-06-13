@@ -23,6 +23,8 @@ const handler = async (m, { conn }) => {
     }
 };
 
+handler.help = ['ruletamuerte'];
+handler.tags = ['fun'];
 handler.command = ['ruletamuerte'];
 handler.botAdmin = true
 

@@ -64,7 +64,7 @@ const handler = async (m, {conn, text, command, usedPrefix, args}) => {
   global.db.data.users[m.sender].wait = new Date * 1;
 };
 handler.help = ['ppt'];
-handler.tags = ['games'];
+handler.tags = ['game'];
 handler.command = ['ppt'];
 handler.group = true;
 handler.register = true;

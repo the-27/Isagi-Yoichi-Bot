@@ -10,6 +10,8 @@ chat.welcome = true
 await m.reply(`${fg}`) 
 return console.log(e)
 }}
+handler.help = ['salir']
+handler.tags = ['owner']
 handler.command = ['salir','leavegc','salirdelgrupo','leave']
 handler.group = true
 handler.rowner = true

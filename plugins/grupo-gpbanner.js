@@ -20,6 +20,8 @@ let handler = async (m, { conn, usedPrefix, command }) => {
   }
 };
 
+handler.help = ['gpbanner', 'groupimg'];
+handler.tags = ['grrupo'];
 handler.command = ['gpbanner', 'groupimg'];
 handler.group = true;
 handler.admin = true;

@@ -7,7 +7,7 @@ let handler = async (m, { conn, text, isRowner }) => {
 };
 
 handler.help = ['setdespedida'];
-handler.tags = ['tools'];
+handler.tags = ['grupo'];
 handler.command = ['setbye'];
 handler.owner = false;
 handler.admin = true;

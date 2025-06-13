@@ -7,8 +7,8 @@ export async function before(m, { conn, participants, groupMetadata }) {
   let pp = await conn.profilePictureUrl(m.messageStubParameters[0], 'image').catch(_ => 'https://raw.githubusercontent.com/The-King-Destroy/Adiciones/main/Contenido/1745522645448.jpeg')
   let img = await (await fetch(`${pp}`)).buffer()
   let chat = global.db.data.chats[m.chat]
-  let txt = 'ゲ◜៹ New Member ៹◞ゲ'
-  let txt1 = 'ゲ◜៹ Bye Member ៹◞ゲ'
+  let txt = ` ⟆⃝༉⃟⸙ ᯽BIENVENIDO ࣪˖ ִֶָ📚་`;
+  let txt1 = ` ⟆⃝༉⃟⸙ A D I O S ͙࿐`;
   let groupSize = participants.length
   if (m.messageStubType == 27) {
     groupSize++;
@@ -17,11 +17,31 @@ export async function before(m, { conn, participants, groupMetadata }) {
   }
 
   if (chat.welcome && m.messageStubType == 27) {
-    let bienvenida = `❀ *Bienvenido* a ${groupMetadata.subject}\n✰ @${m.messageStubParameters[0].split`@`[0]}\n${global.welcom1}\n✦ Ahora somos ${groupSize} Miembros.\n•(=^●ω●^=)• Disfruta tu estadía en el grupo!\n> ✐ Puedes usar *#help* para ver la lista de comandos.`    
+    let bienvenida = `┏━〔 𝐁𝐈𝐄𝐍𝐕𝐄𝐍𝐈𝐃𝐎/𝐀 〕━┓
+┃🎉 𝚄𝚂𝚄𝙰𝚁𝙸𝙾: @${m.messageStubParameters[0].split`@`[0]}
+┃🍬 𝙼𝙸𝙴𝙼𝙱𝚁𝙾𝚂: ${groupSize}
+┃🗓️ 𝙵𝙴𝙲𝙷𝙰: ${new Date().toLocaleString('id-ID')}
+┃🪀 𝙶𝚁𝚄𝙿𝙾: ${groupMetadata.subject}
+┗━━━━━━━━━━━━━━━━━━┛
+
+*${global.welcom1}*
+
+> ✐ \`\`\`Usa #𝗺𝗲𝗻𝘂 para ver los comandos disponibles.\`\`\`
+¡🌴 Disfruta tu estadía en el grupo!`    
     await conn.sendMini(m.chat, txt, dev, bienvenida, img, img, redes, fkontak)
   }
   
   if (chat.welcome && (m.messageStubType == 28 || m.messageStubType == 32)) {
-    let bye = `❀ *Adiós* de ${groupMetadata.subject}\n✰ @${m.messageStubParameters[0].split`@`[0]}\n${global.welcom2}\n✦ Ahora somos ${groupSize} Miembros.\n•(=^●ω●^=)• Te esperamos pronto!\n> ✐ Puedes usar *#help* para ver la lista de comandos.`
+    let bye = `┏━〔 𝐇𝐀𝐒𝐓𝐀 𝐏𝐑𝐎𝐍𝐓𝐎 〕━┓
+┃🧩 *𝚄𝚂𝚄𝙰𝚁𝙸𝙾:* @${m.messageStubParameters[0].split`@`[0]}
+┃🌴 *𝙼𝙸𝙴𝙼𝙱𝚁𝙾𝚂:* ${groupSize}
+┃🗓️ *𝙵𝙴𝙲𝙷𝙰:* ${new Date().toLocaleString('id-ID')}
+┃🍬 *𝙶𝚁𝚄𝙿𝙾:* ${groupMetadata.subject}
+┗━━━━━━━◈◆◇◈━━━━━━━┛
+
+*${global.welcom2}*
+
+> ✐ \`\`\`Usa #𝗺𝗲𝗻𝘂 para ver los comandos disponibles.\`\`\`
+🥯 ¡Te Esperamos Pronto!`
     await conn.sendMini(m.chat, txt1, dev, bye, img, img, redes, fkontak)
   }}

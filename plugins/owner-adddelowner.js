@@ -20,6 +20,8 @@ const handler = async (m, { conn, text, args, usedPrefix, command }) => {
       break;
   }
 };
+handler.help = ['addowner', 'delowner']
+handler.tags = ['owner']
 handler.command = ['addowner', 'delowner']
 handler.rowner = true;
 export default handler;

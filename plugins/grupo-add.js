@@ -10,7 +10,7 @@ let link = 'https://chat.whatsapp.com/' + await conn.groupInviteCode(group)
 
 }
 handler.help = ['invite *<521>*']
-handler.tags = ['group']
+handler.tags = ['grupo']
 handler.command = ['add', 'agregar', 'añadir']
 handler.group = true
 handler.admin = false

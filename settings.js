@@ -17,21 +17,21 @@ global.botNumber = '' //Ejemplo: 573218138672
 
 global.owner = [
 // <-- Número @s.whatsapp.net -->
-  ['5212202410659', '🜲 Propietario 🜲', true],
-  ['5492916450307'],
-  ['5219541690054'],
-  ['5214811527445'], 
-  ['5216671548329'],
+  ['51969214380', '🜲 Propietario 🜲', true],
+  ['51994114690'],
+  ['51919199620'],
+  ['51998118690'], 
+  ['51935851085'],
   
 // <-- Número @lid -->
-  ['117094280605916', 'Destroy', true],
+  ['117094280605916', 'black', true],
   ['258892692984006', 'DevAlexJs', true]
 ];
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
 global.mods = []
-global.suittag = ['5212202410659'] 
+global.suittag = ['51969214380'] 
 global.prems = []
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
@@ -39,45 +39,45 @@ global.prems = []
 global.libreria = 'Baileys'
 global.baileys = 'V 6.7.17' 
 global.vs = '2.2.5'
-global.nameqr = 'YukiBot-MD'
-global.namebot = '✿◟Yυƙι-Sυσυ-Bσƚ◞✿'
+global.nameqr = '𝒊𝒔𝒂𝒈𝒊 𝒚𝒐𝒊𝒄𝒉𝒊 𝒊𝒂'
+global.namebot = '✿◟𝒊𝒔𝒂𝒈𝒊 𝒚𝒐𝒊𝒄𝒉𝒊◞✿'
 global.sessions = 'Sessions'
 global.jadi = 'JadiBots' 
-global.yukiJadibts = true
+global.blackJadibts = true
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
-global.packname = '⪛✰ 𝐘𝐮𝐤𝐢-𝐒𝐮𝐨𝐮-𝐁𝐨𝐭 ✰⪜'
-global.botname = 'ᥡᥙkі sᥙ᥆ᥙ'
-global.wm = '✿◟Yυƙι Sυσυ◞✿'
-global.author = '© mᥲძᥱ ᥕі𝗍һ ᑲᥡ ⁱᵃᵐ|𝔇ĕ𝐬†𝓻⊙γ𒆜'
-global.dev = '© ⍴᥆ᥕᥱrᥱძ ᑲᥡ ⁱᵃᵐ|𝔇ĕ𝐬†𝓻⊙γ𒆜'
-global.textbot = 'Yuki, mᥲძᥱ ᥕі𝗍һ ᑲᥡ ⁱᵃᵐ|𝔇ĕ𝐬†𝓻⊙γ'
-global.etiqueta = 'ⁱᵃᵐ|𝔇ĕ𝐬†𝓻⊙γ𒆜'
+global.packname = '⪛𒆜꙰ꫂ𝐈♤𝐒𝐀𝐆𝐈•-𝄟≛⃝𝐁𝐎𓆩𝐓𝄟≛⪜'
+global.botname = ' ✦⃟⛧┋ ➪ _ＩＳＡＧＩ ⛧ ＹＯＩＣＨＩ_ ⚽┋⃟✧'
+global.wm = 'ᬊᬁ࿔᭄ྀιʂαɠι ✿ꦿ⚽ℬ𝒪𝒯᭄✿'
+global.author = 'mᥲძᥱ ᑲᥡ : 🌈ᵀ͢ᴴᴱ𝄟⏤͟͟͞͞⃝Black'
+global.dev = '© Modified by:  ꧁𓊈𒆜𝖙𝖍𝖊•𝒃𝒍𝒂𝒄𝒌𒆜𓊉꧂'
+global.textbot = '「 ⚽ 𝐈𝐒𝐀𝐆𝐈 - 𝐘𝐎𝐈𝐂𝐇𝐈 🌴 」• 𝙋𝙤𝙬𝙚𝙧𝙚𝙙 𝙗𝙮 ꧁⟣٭𝖙𝖍𝖊_𝚋𝚕𝚊𝚌𝚔٭⟢꧂'
+global.etiqueta = '٭𝚋𝚕𝚊𝚌𝚔٭'
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
-global.moneda = '¥enes'
-global.welcom1 = '❍ Edita Con El Comando setwelcome'
-global.welcom2 = '❍ Edita Con El Comando setbye'
-global.banner = 'https://raw.githubusercontent.com/The-King-Destroy/Adiciones/main/Contenido/1742678744381.jpeg'
-global.avatar = 'https://raw.githubusercontent.com/The-King-Destroy/Adiciones/main/Contenido/1742678797993.jpeg'
+global.moneda = 'coins'
+global.welcom1 = '🏔️ Edita El Welcome con #setwelcome'
+global.welcom2 = '🌿 Edita El Welcome con #setbye'
+global.banner = 'https://files.catbox.moe/7m1fbp.jpg'
+global.avatar = 'https://files.catbox.moe/gd7zpq.jpg'
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
-global.gp1 = 'https://chat.whatsapp.com/GeMUm4iACPPKRPrKBRKM8c'
-global.comunidad1 = 'https://chat.whatsapp.com/I0dMp2fEle7L6RaWBmwlAa'
-global.channel = 'https://whatsapp.com/channel/0029VbAfPu9BqbrEMFWXKE0d'
-global.channel2 = 'https://whatsapp.com/channel/0029VbAfPu9BqbrEMFWXKE0d'
-global.md = 'https://github.com/The-King-Destroy/Yuki_Suou-Bot'
-global.correo = 'thekingdestroy507@gmail.com'
+global.gp1 = 'https://whatsapp.com/channel/0029Vb6BDQc0lwgsDN1GJ31i'
+global.comunidad1 = 'https://whatsapp.com/channel/0029Vb6BDQc0lwgsDN1GJ31i'
+global.channel = 'https://whatsapp.com/channel/0029Vb6BDQc0lwgsDN1GJ31i'
+global.channel2 = 'https://whatsapp.com/channel/0029Vb6BDQc0lwgsDN1GJ31i'
+global.md = 'https://github.com/the-27/Isagi-Yoichi-Bot'
+global.correo = 'blackoficial2025@gmail.com'
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
 global.catalogo = fs.readFileSync('./src/catalogo.jpg');
 global.estilo = { key: {  fromMe: false, participant: `0@s.whatsapp.net`, ...(false ? { remoteJid: "5219992095479-1625305606@g.us" } : {}) }, message: { orderMessage: { itemCount : -999999, status: 1, surface : 1, message: packname, orderTitle: 'Bang', thumbnail: catalogo, sellerJid: '0@s.whatsapp.net'}}}
 global.ch = {
-ch1: '120363416409380841@newsletter',
+ch1: '120363417186717632@newsletter',
 }
 global.multiplier = 60
 
