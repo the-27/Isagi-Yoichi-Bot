@@ -154,8 +154,8 @@ const handler = async (m, { conn, args }) => {
   }
 };
 
-handler.help = ['mp4 *<url>*'];
+handler.help = ['video *<url>*'];
 handler.tags = ['descargas'];
-handler.command = ['ytmp4', 'mp4'];
+handler.command = ['video'];
 
 export default handler;
