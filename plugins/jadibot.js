@@ -5,10 +5,7 @@ import ws from 'ws';
 
 let handler = async (m, { conn: _envio, command, usedPrefix, args, text, isOwner}) => {
 
-let img = [ 
-"https://qu.ax/wLRYM.jpg",
-"https://qu.ax/sqlKC.jpg"
-  ].getRandom()
+let img = 'https://qu.ax/wLRYM.jpg'
   
 const isCommand1 = /^(deletesesion|deletebot|deletesession|deletesesaion)$/i.test(command)  
 const isCommand2 = /^(stop|pausarai|pausarbot)$/i.test(command)  
