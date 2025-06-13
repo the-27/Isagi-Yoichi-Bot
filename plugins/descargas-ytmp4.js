@@ -100,8 +100,8 @@ const savetube = {
 
       const dl = await savetube.request(`https://${cdn}${savetube.api.download}`, {
         id,
-        downloadType: 'audio',
-        quality: '128',
+        downloadType: 'video', // ← Cambiado a video
+        quality: '720',         // ← Puedes ajustar esta calidad
         key: decrypted.key
       });
 
@@ -112,8 +112,8 @@ const savetube = {
       return {
         status: true,
         result: {
-          title: decrypted.title || "Audio",
-          format: 'mp3',
+          title: decrypted.title || "Video",
+          format: 'mp4',
           url: dl.data.data.downloadUrl,
           thumbnail: decrypted.thumbnail || `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`,
         }
@@ -124,10 +124,9 @@ const savetube = {
   }
 };
 
-
 const handler = async (m, { conn, args }) => {
   const url = args[0];
-  if (!url) return m.reply(`❗ Ingresa una URL de YouTube`);
+  if (!url) return m.reply(`*❗ Ingresa una URL de YouTube*`);
   if (!savetube.isUrl(url)) return m.reply(`🌐 El enlace no es válido`);
 
   try {
@@ -142,21 +141,21 @@ const handler = async (m, { conn, args }) => {
     const { title, url: dlUrl } = res.result;
 
     await conn.sendMessage(m.chat, {
-      audio: { url: dlUrl },
-      mimetype: 'audio/mpeg',
-      fileName: `${title}.mp3`
+      video: { url: dlUrl }, // ← Enviar como video
+      mimetype: 'video/mp4',
+      fileName: `${title}.mp4`
     }, { quoted: m });
 
     await m.react('✅');
   } catch (err) {
-    console.error("Error MP3:", err);
+    console.error("Error MP4:", err);
     await m.react('❌');
     m.reply(`❌ Error al procesar la descarga. Puede que el archivo sea muy grande o la API haya fallado.`);
   }
 };
 
-handler.help = ['mp3 *<url>*'];
+handler.help = ['mp4 *<url>*'];
 handler.tags = ['descargas'];
-handler.command = ['ytmp3', 'mp3'];
+handler.command = ['ytmp4', 'mp4'];
 
 export default handler;
