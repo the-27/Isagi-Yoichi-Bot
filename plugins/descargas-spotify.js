@@ -54,12 +54,12 @@ const handler = async (m, { conn, text }) => {
     }
 
     const cap = `┏━━━━━━━━━━━━━━━━━┓
-┃💿 Título: » *${track.name}*
-┃🎨 Artista: » *${track.artists.map((a) => a.name).join(", ")}*
-┃📚 Álbum: » *${track.album.name}*
-┃👾 Fecha: » *${track.album.release_date}
-┃🕒 Duración: » *${(track.duration_ms / 60000).toFixed(2)} min*
-┃🔗 URL: » *${track.external_urls.spotify}*
+┃💿 *Título:* ${track.name}
+┃🎨 *Artista:* ${track.artists.map((a) => a.name).join(", ")}
+┃📚 *Álbum:* ${track.album.name}
+┃👾 *Fecha:* ${track.album.release_date}
+┃🕒 *Duración:* ${(track.duration_ms / 60000).toFixed(2)}
+┃🔗 *URL:* ${track.external_urls.spotify}
 ┗━━━━━━━━━━━━━━━━━┛
 
 # 🌴 Su audio se enviará en un momento...
