@@ -10,12 +10,12 @@ const { generateWAMessageFromContent, proto } = (await import('@whiskeysockets/b
 const defaultMenu = {
   before: `“🍭 ¡Hola! *%name*, a qui esta mi menu para Grupo"
 
-*─ׄ─ׄ─⭒─ׄ─ׅ─ׄ⭒─ׄ─ׄ─⭒─ׄ─ׄ─⭒─ׄ─ׅ──ׄ*
+*─═ڿڰۣڿ☻ڿڰۣڿ═─ 👾 ─═ڿڰۣڿ☻ڿڰۣڿ═─ *
 %readmore
 `.trimStart(),
-  header: '┏━━⪩「 *_`%category`_* 」⪨',
-  body: '┃『🍭』 %cmd\n',
-  footer: '┗━━━━━━━━━━━━━━━━⪩\n',
+  header: '╰⊱♥⊱╮ღ꧁ *_`%category`_* ꧂ღ╭⊱♥≺',
+  body: '┃『👾』 %cmd\n',
+  footer: '⚽♪┏(°.°)┛🎼 smiley.cool 🎼┏(°.°)┛♪🔗\n',
   after: ``,
 }
 let handler = async (m, { conn, usedPrefix: _p, __dirname, args, command}) => {

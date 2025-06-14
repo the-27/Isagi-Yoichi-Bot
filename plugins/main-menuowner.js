@@ -4,6 +4,7 @@ let handler = async (m, { conn, args }) => {
     let img = 'https://files.catbox.moe/7m1fbp.jpg'
     let name = conn.getName(userId)
     let txt = `
+    [ꔊꔊꔊ[🍉] _*MENU - OWNER*_ [🍓]ꔊꔊꔊ]    
 Hola @${userId.split('@')[0]} aqui esta el menu owner
 
 > ᥴ᥆mᥲᥒძ᥆s ძᥱ m᥆ძᥱrᥲᥴіóᥒ ᥡ ᥴ᥆ᥒ𝗍r᥆ᥣ ᥲ᥎ᥲᥒzᥲძ᥆ ⍴ᥲrᥲ ᥆ᥕᥒᥱrs.
@@ -96,6 +97,8 @@ Hola @${userId.split('@')[0]} aqui esta el menu owner
 > ✦ ϲαмϐια ℓα ϐιοgяαƒíα ∂єℓ ϐοτ.
 ᰔᩚ *#υρ∂ατє*
 > ✦ αϲτυαℓιzα єℓ ϐοτ α ℓα νєяѕιóи мáѕ яєϲιєиτє ∂є gιτнυϐ.
+
+·٠•●♥ Ƹ̵̡Ӝ̵̨̄Ʒ ♥●•٠·˙ 🌲 ˙·٠•●♥ Ƹ̵̡Ӝ̵̨̄Ʒ ♥●•٠·˙
 `.trim()
 
   await conn.sendMessage(m.chat, { 
