@@ -28,8 +28,8 @@ const handler = async (m, { conn, text, usedPrefix, command}) => {
         caption: body,
         footer: 'Elige una opción para descargar:',
         buttons: [
-          { buttonId: `${usedPrefix}yta ${videoInfo.url}`, buttonText: { displayText: '🎵 ᥲᥙძі᥆'}, type: 1},
-          { buttonId: `${usedPrefix}ytv ${videoInfo.url}`, buttonText: { displayText: '📽️ ᥎іძᥱ᥆'}, type: 1},
+          { buttonId: `${usedPrefix}audio ${videoInfo.url}`, buttonText: { displayText: '🎵 ᥲᥙძі᥆'}, type: 1},
+          { buttonId: `${usedPrefix}video ${videoInfo.url}`, buttonText: { displayText: '📽️ ᥎іძᥱ᥆'}, type: 1},
         ],
         viewOnce: true,
         headerType: 4,
