@@ -538,15 +538,15 @@ global.dfail = (type, m, conn) => {
   let verifyaleatorio = ['registrar', 'reg', 'verificar', 'verify', 'register'].getRandom();
 
   const msg = {
-  rowner: `『👑』El comando 〘 ${comando} 〙 Solo puede ser usado por los creadores del bot.`,
-  owner: `『🍬』El comando 〘 ${comando} 〙 Solo puede ser usado por los desarrolladores del bot.`,
-  mods: `『⚙️』El comando 〘 ${comando} 〙 Solo puede ser usado por los moderadores del bot.`,
-  premium: `『🚀』El comando 〘 ${comando} 〙 Solo puede ser usado por los usurios Premium.`,
-  group: `『⚡』El comando 〘 ${comando} 〙 solo puede ser usado es grupos.`,
-  private: `『⛈️』El comando 〘 ${comando} 〙 solo puede ser usaso en chat privado.`,
-  admin: `『🍫』El comando 〘 ${comando} 〙 Solo puede ser usado por los administradores del grupo.`,
-  botAdmin: `『🚀』Para ejecutar el comando〘 ${comando} 〙 debo der administrador del grupo.`,
-  unreg: `*🏔️ El comando〘 ${comando} 〙Solo puede ser usado por los usuarios registrados*\n\n\`\`\`_🌴 Utiliza 📚_:\`\`\`\n> » *#${verifyaleatorio} ${user2}.${edadaleatoria}*`,
+  rowner: `『👑』𝙀𝙡 𝙘𝙤𝙢𝙖𝙣𝙙𝙤「 *${comando}* 」𝙨𝙤𝙡𝙤 𝙥𝙪𝙚𝙙𝙚 𝙨𝙚𝙧 𝙪𝙨𝙖𝙙𝙤 𝙥𝙤𝙧 𝙡𝙤𝙨 𝙘𝙧𝙚𝙖𝙙𝙤𝙧𝙚𝙨 𝙙𝙚𝙡 𝙗𝙤𝙩.`,
+  owner: `『🍬』𝙀𝙡 𝙘𝙤𝙢𝙖𝙣𝙙𝙤「 *${comando}* 」𝙨𝙤𝙡𝙤 𝙥𝙪𝙚𝙙𝙚 𝙨𝙚𝙧 𝙪𝙨𝙖𝙙𝙤 𝙥𝙤𝙧 𝙡𝙤𝙨 𝙙𝙚𝙨𝙖𝙧𝙧𝙤𝙡𝙡𝙖𝙙𝙤𝙧𝙚𝙨 𝙙𝙚𝙡 𝙗𝙤𝙩.`,
+  mods: `『⚙️』𝙀𝙡 𝙘𝙤𝙢𝙖𝙣𝙙𝙤「 *${comando}* 」𝙨𝙤𝙡𝙤 𝙥𝙪𝙚𝙙𝙚 𝙨𝙚𝙧 𝙪𝙨𝙖𝙙𝙤 𝙥𝙤𝙧 𝙡𝙤𝙨 𝙢𝙤𝙙𝙚𝙧𝙖𝙙𝙤𝙧𝙚𝙨 𝙙𝙚𝙡 𝙗𝙤𝙩.`,
+  premium: `『🍓』𝙀𝙡 𝙘𝙤𝙢𝙖𝙣𝙙𝙤「 *${comando}* 」𝙨𝙤𝙡𝙤 𝙥𝙪𝙚𝙙𝙚 𝙨𝙚𝙧 𝙪𝙨𝙖𝙙𝙤 𝙥𝙤𝙧 𝙡𝙤𝙨 𝙪𝙨𝙪𝙖𝙧𝙞𝙤𝙨 𝙋𝙧𝙚𝙢𝙞𝙪𝙢.`,
+  group: `『⚡』𝙀𝙡 𝙘𝙤𝙢𝙖𝙣𝙙𝙤「 *${comando}* 」𝙨𝙤𝙡𝙤 𝙥𝙪𝙚𝙙𝙚 𝙨𝙚𝙧 𝙪𝙨𝙖𝙙𝙤 𝙚𝙣 𝙜𝙧𝙪𝙥𝙤𝙨.`,
+  private: `『⛈️』𝙀𝙡 𝙘𝙤𝙢𝙖𝙣𝙙𝙤「 *${comando}* 」𝙨𝙤𝙡𝙤 𝙥𝙪𝙚𝙙𝙚 𝙨𝙚𝙧 𝙪𝙨𝙖𝙙𝙤 𝙚𝙣 𝙘𝙝𝙖𝙩 𝙥𝙧𝙞𝙫𝙖𝙙𝙤.`,
+  admin: `『🍫』𝙀𝙡 𝙘𝙤𝙢𝙖𝙣𝙙𝙤「 *${comando}* 」𝙨𝙤𝙡𝙤 𝙥𝙪𝙚𝙙𝙚 𝙨𝙚𝙧 𝙪𝙨𝙖𝙙𝙤 𝙥𝙤𝙧 𝙡𝙤𝙨 𝙖𝙙𝙢𝙞𝙣𝙞𝙨𝙩𝙧𝙖𝙙𝙤𝙧𝙚𝙨 𝙙𝙚𝙡 𝙜𝙧𝙪𝙥𝙤.`,
+  botAdmin: `『🚀』𝙋𝙖𝙧𝙖 𝙚𝙟𝙚𝙘𝙪𝙩𝙖𝙧 𝙚𝙡 𝙘𝙤𝙢𝙖𝙣𝙙𝙤「${comando} 」𝙙𝙚𝙗𝙤 𝙨𝙚𝙧 𝙖𝙙𝙢𝙞𝙣𝙞𝙨𝙩𝙧𝙖𝙙𝙤𝙧 𝙙𝙚𝙡 𝙜𝙧𝙪𝙥𝙤.`,
+  unreg: `*🏔️ El comando「 *${comando}* 」Solo puede ser usado por los usuarios registrados*\n\n\`\`\`_🌴 Utiliza 📚_:\`\`\`\n> » *#${verifyaleatorio} ${user2}.${edadaleatoria}*`,
   restrict: `『✦』𝑬𝒔𝒕𝒂 𝒄𝒂𝒓𝒂𝒄𝒕𝒆𝒓𝒊𝒔𝒕𝒊𝒄𝒂 𝒆𝒔𝒕𝒂 𝒅𝒆𝒔𝒂𝒄𝒕𝒊𝒗𝒂𝒅𝒂.`
 }[type];
 
