@@ -1,5 +1,5 @@
 let handler = async (m, { conn, usedPrefix}) => {
-  let img = `https://files.catbox.moe/191v1r.jpg`;
+  let img = `https://files.catbox.moe/3gxuzq.jpg`;
   let txt = `╭ - - - - - - -✎ 🌹   ❜ ⊹
 *︵₊˚꒰Ꮺ Manual para editar tu perfil*
 *꒰ ୨⚔️୧─・┈・୨⚡୧・┈・─୨⚔️୧ ꒱*
@@ -30,7 +30,7 @@ let handler = async (m, { conn, usedPrefix}) => {
     footer: " ✦⃟⛧┋ ➪ _ISAGI ⛧ U L T R A_ ⚽┋⃟✧",
     buttons: buttons,
     viewOnce: true,
-}, { quoted: m});
+  }, { quoted: m});
 
   await m.react('👻');
 };
