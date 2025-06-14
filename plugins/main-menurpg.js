@@ -13,40 +13,40 @@ let handler = async (m, { conn, args }) => {
 
 ━⃨⃛━╼─╍╍╍─╍▻◅╍─╍╍╼╼━⃨⃛╍╍
 ❖─┅─┅〈 𝑹 𝑷 𝑮
-┃𐇛 .aventura
-┃𐇛 .baltop
-┃𐇛 .berburu
-┃𐇛 .bank
-┃𐇛 .cofre
-┃𐇛 .depositar
-┃𐇛 .explorar
-┃𐇛 .gremio
-┃𐇛 .halloween
-┃𐇛 .heal
-┃𐇛 .inventario
-┃𐇛 .mazmorra
-┃𐇛 .monthly
-┃𐇛 .retirar
-┃𐇛 .navidad
-┃𐇛 .robar
-┃𐇛 .protituirse
-┃𐇛 .weekly
-┃𐇛 .pay
+┃𐇛 _.aventura_
+┃𐇛 _.baltop_
+┃𐇛 _.berburu_
+┃𐇛 _.bank_
+┃𐇛 _.cofre_
+┃𐇛 _.depositar_
+┃𐇛 _.explorar_
+┃𐇛 _.gremio_
+┃𐇛 _.halloween_
+┃𐇛 _.heal_
+┃𐇛 _.inventario_
+┃𐇛 _.mazmorra_
+┃𐇛 _.monthly_
+┃𐇛 _.retirar_
+┃𐇛 _.navidad_
+┃𐇛 _.robar_
+┃𐇛 _.protituirse_
+┃𐇛 _.weekly_
+┃𐇛 _.pay_
 ╰━≡
 
 ❖─┅─┅〈 𝑬𝑪𝑶𝑵𝑶𝑴𝑰𝑨
-┃⛨ .canjear <código>
-┃⛨ .wallet
-┃⛨ .apostar *<cantidad>*
-┃⛨ .cf
-┃⛨ .crimen
-┃⛨ .daily
-┃⛨ .minar
-┃⛨ .robarxp
-┃⛨ .buy - Buyall
-┃⛨ .ruleta *<cantidad> <color>*
-┃⛨ .trabajar
-┃⛨ .slot <apuesta>
+┃⛨ _.canjear *<código>*_
+┃⛨ _.wallet_
+┃⛨ _.apostar *<cantidad>*_
+┃⛨ _.cf_
+┃⛨ _.crimen_
+┃⛨ _.daily_
+┃⛨ _.minar_
+┃⛨ _.robarxp_
+┃⛨ _.buy - Buyall_
+┃⛨ _.ruleta *<cantidad> <color>*_
+┃⛨ _.trabajar_
+┃⛨ _.slot *<apuesta>*_
 ╰━≡
 ━⃨⃛━╼─╍╍╍─╍▻◅╍─╍╍╼╼━⃨⃛╍╍
 `.trim()
