@@ -142,8 +142,6 @@ const handler = async (m, { conn, args }) => {
 
     await conn.sendMessage(m.chat, {
       video: { url: dlUrl }, // ← Enviar como video
-      video: videoBuffer,
-      caption: `${title}`,
       mimetype: 'video/mp4',
       fileName: `${title}.mp4`
     }, { quoted: m });

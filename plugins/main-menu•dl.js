@@ -37,6 +37,8 @@ let handler = async (m, { conn, args }) => {
 ❥ 🎃 _.tt2_
 ❥ 🎃 _.tiktokimg_ 
 ❥ 🎃 _.tiktokmp3_ 
+❥ 🎃 _.audio *<url>*_
+❥ 🎃 _.video *<url>*_
 ❥ 🎃 _.tiktokhd_
 ❥ 🎃 _.twitter *<url>*_
 ❥ 🎃 _.xnxxdl_
