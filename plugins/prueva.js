@@ -17,8 +17,6 @@ let handler = async (m, { conn, usedPrefix }) => {
     let error = '❌';
 
     let menu = `
-           *_~✦═ೋ『★』ೋ═✦~_*
-       [𔓕꯭(꯭𝗞).꯭𝗜.꯭𝗟-꯭𝗟.꯭𝗨.꯭𝗔꯭꯭𔓕]
     *_~✦═ೋ『★』ೋ═✦~_*
 ⚙️ *Opciones disponibles:*
 - 📥 *Menú de Descargas*
@@ -29,6 +27,8 @@ let handler = async (m, { conn, usedPrefix }) => {
 - 🌴 *Menu de Audios*
 - 🏔️ *Servicios*
 - 📜 *Audios*
+
+   *_~✦═ೋ『★』ೋ═✦~_*
 
 📌 Usa los botones o el selector de lista para navegar.
 
@@ -42,32 +42,32 @@ let handler = async (m, { conn, usedPrefix }) => {
           {
             title: "📥 𝗠𝗘𝗡𝗨 𝗗𝗘𝗦𝗖𝗔𝗥𝗚𝗔𝗦",
             description: "Descarga contenido de YouTube, Facebook, Instagram, etc.",
-            id: `${usedPrefix}menudl`
+            id: `#menudl`
           },
           {
             title: "🌲 𝗠𝗘𝗡𝗨 𝗢𝗪𝗡𝗘𝗥",
             description: "Comandos avanzados para owners.",
-            id: `${usedPrefix}dev`
+            id: `#dev`
           },
           {
             title: "✨ 𝗠𝗘𝗡𝗨 𝗥𝗣𝗚",
             description: "Crea tu aventura RPG.",
-            id: `${usedPrefix}menurpg`
+            id: `#menurpg`
           },
           {
             title: "🔍 𝗠𝗘𝗡𝗨 𝗕𝗨𝗦𝗤𝗨𝗘𝗗𝗔𝗦",
             description: "Busca información, audios, videos y más.",
-            id: `${usedPrefix}menuse`
+            id: `#menuse`
           },
           {
             title: "📜 𝗠𝗘𝗡𝗨 𝗔𝗨𝗗𝗜𝗢𝗦",
             description: "Audios sin prefijo",
-            id: `${usedPrefix}menu2`
+            id: `#menu2`
           },
           {
             title: "👾 𝗠𝗘𝗡𝗨 𝗣𝗘𝗥𝗙𝗜𝗟",
             description: "Mira y edita tu perfil.",
-            id: `${usedPrefix}Perfildates`
+            id: `#Perfildates`
           }
         ]
       }
@@ -75,14 +75,14 @@ let handler = async (m, { conn, usedPrefix }) => {
 
     let buttons = [
       { buttonId: `${usedPrefix}owner`, buttonText: { displayText: "👑 Creador" }, type: 1 },
-      { buttonId: `${usedPrefix}code`, buttonText: { displayText: "🏔️ Servicios" }, type: 1 }
+      { buttonId: `${usedPrefix}owner`, buttonText: { displayText: "🏔️ Servicios" }, type: 1 }
     ];
 
     // Enviar imagen con botones
     await conn.sendMessage(m.chat, {
       image: { url: randomImage },
       caption: menu,
-      footer: " ✦⃟⛧┋ ➪ _K I L L U A ⛧ U L T R A_ ⚽┋⃟✧",
+      footer: " ✦⃟⛧┋ ➪ _ISAGI ⛧ YOICHI_ ⚽┋⃟✧",
       viewOnce: true,
       buttons: buttons
     }, { quoted: m });
@@ -93,8 +93,8 @@ let handler = async (m, { conn, usedPrefix }) => {
     // Enviar menú tipo lista
     await conn.sendMessage(m.chat, {
       text: "🍓 𝑺𝑬𝑳𝑬𝑪𝑪𝑰𝑶𝑵𝑬 𝑼𝑵𝑨 𝑶𝑷𝑪𝑰𝑶𝑵 𝑫𝑬𝑳 𝑴𝑬𝑵𝑼",
-      footer: " ✦⃟⛧┋ ➪ _K I L L U A ⛧ U L T R A_ ⚽┋⃟✧",
-      title: "📋 RIN-ITOSHI MENÚ 📚",
+      footer: " ✦⃟⛧┋ ➪ _I S A G I ⛧ U L T R A_ ⚽┋⃟✧",
+      title: "📋 ISAGI-YOICHI MENÚ 📚",
       buttonText: "ධ⃟🌹 𝐌𝐄𝐍𝐔 𝐋𝐈𝐒𝐓",
       sections: sections
     }, { quoted: m });
