@@ -127,16 +127,16 @@ const savetube = {
 
 const handler = async (m, { conn, args }) => {
   const url = args[0];
-  if (!url) return m.reply(`❗ Ingresa una URL de YouTube`);
-  if (!savetube.isUrl(url)) return m.reply(`🌐 El enlace no es válido`);
+  if (!url) return m.reply(`*🌴 Ingresa una URL de YouTube.*`);
+  if (!savetube.isUrl(url)) return m.reply(`*🌐 El enlace no es válido.*`);
 
   try {
-    await m.react('⏳');
+    await m.react('🕐');
     const res = await savetube.download(url);
 
     if (!res.status) {
       await m.react('❌');
-      return m.reply(`⚠️ Error: ${res.error}`);
+      return m.reply(`🌴 Error: ${res.error}`);
     }
 
     const { title, url: dlUrl } = res.result;
