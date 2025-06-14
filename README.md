@@ -1,8 +1,8 @@
 <h1 align="center">BOT PRIVADO</h1>
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=40&pause=500&color=00F7FF&center=true&vCenter=true&width=500&lines=⚙️🔥+¡RIN+ITOSHI!+🏔️" alt="Typing SVG">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=40&pause=500&color=00F7FF&center=true&vCenter=true&width=500&lines=⚽+¡𝑰𝑺𝑨𝑮𝑰+𝒀𝑶𝑰𝑪𝑯𝑰!+🏔️" alt="Typing SVG">
 </h1>
-  <img src="https://files.catbox.moe/191v1r.jpg" width="300">
+  <img src="https://files.catbox.moe/3gxuzq.jpg" width="300">
 </p>
 
 <p align="center">
@@ -79,16 +79,19 @@ npm start
 Si después de instalar el bot en Termux y iniciar la session del bot (el numero se va a soporte, se cierra la conexión o demorastes al conectar), sigue estos pasos:
 
 1. Abre Termux y navega al directorio del bot:
+
    ```bash
     cd Isagi-Yoichi-Bot
    ```
 
 2. Elimina la carpeta MiniSession:
+
    ```bash
     rm -rf Sessions
    ```
 
 3. Inicia el bot nuevamente:
+
    ```bash
     npm start
    ```
