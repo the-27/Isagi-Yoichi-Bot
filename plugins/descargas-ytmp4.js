@@ -130,7 +130,7 @@ const handler = async (m, { conn, args }) => {
   if (!savetube.isUrl(url)) return m.reply(`*🌐 El enlace no es válido*`);
 
   try {
-    await m.react('🕐');
+    await m.react('🕒');
     const res = await savetube.download(url);
 
     if (!res.status) {

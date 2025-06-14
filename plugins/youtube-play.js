@@ -13,8 +13,7 @@ const handler = async (m, { conn, text, usedPrefix, command}) => {
       return conn.reply(m.chat, '⚠︎ Ocurrió un error al buscar el video. Inténtalo de nuevo más tarde.', m);
   }
 
-    const body = `
-> 𑁯᧙ 🍓 *Título:* ${videoInfo.title}
+    const body = `> 𑁯᧙ 🍓 *Título:* ${videoInfo.title}
 > 𑁯᧙ 📏 *Duración:* ${videoInfo.timestamp}
 > 𑁯᧙ 👁️ *Vistas:* ${videoInfo.views.toLocaleString()}
 > 𑁯᧙ 🎨 *Autor:* ${videoInfo.author.name}
