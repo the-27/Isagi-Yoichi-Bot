@@ -1,4 +1,4 @@
-let handler = async (m, { conn, usedPrefix}) => {
+let handler = async (m, { conn, usedPrefix }) => {
   let img = `https://files.catbox.moe/3gxuzq.jpg`;
   let txt = `╭ - - - - - - -✎ 🌹   ❜ ⊹
 *︵₊˚꒰Ꮺ Manual para editar tu perfil*
@@ -14,23 +14,41 @@ let handler = async (m, { conn, usedPrefix}) => {
 ╰───────────────⋆`;
 
   const buttons = [
-     { 
-       buttonId: `${usedPrefix}profile`,
-       buttonText: { displayText: "🏔️ ⍴ᥱr𝖿іᥣ"}, type: 1
-     },
-     { 
-       buttonId: `${usedPrefix}p`,
-       buttonText: { displayText: "🏓 ⍴іᥒg"}, type: 1
-     },
+    { 
+      buttonId: `${usedPrefix}profile`,
+      buttonText: { displayText: "🏔️ ⍴ᥱr𝖿іᥣ" }, type: 1
+    },
+    { 
+      buttonId: `${usedPrefix}p`,
+      buttonText: { displayText: "🏓 ⍴іᥒg" }, type: 1
+    },
   ];
 
+  // Crear el fkontak válido
+  const fkontak = {
+    key: {
+      participants: "0@s.whatsapp.net",
+      remoteJid: "status@broadcast",
+      fromMe: false,
+      id: "Halo"
+    },
+    message: {
+      contactMessage: {
+        displayName: "✦⃟⛧ ISAGI",
+        vcard: "BEGIN:VCARD\nVERSION:3.0\nN:;✦⃟⛧ ISAGI;;;\nFN:✦⃟⛧ ISAGI\nitem1.TEL;waid=1234567890:+12 3456-7890\nitem1.X-ABLabel:Ponsel\nEND:VCARD"
+      }
+    },
+    participant: "0@s.whatsapp.net"
+  };
+
   await conn.sendMessage(m.chat, {
-    image: { url: img},
+    image: { url: img },
     caption: txt,
     footer: " ✦⃟⛧┋ ➪ _ISAGI ⛧ U L T R A_ ⚽┋⃟✧",
     buttons: buttons,
     viewOnce: true,
-  }, { quoted: m});
+    contextInfo: { forwardingScore: 999, isForwarded: true, ...fkontak }
+  }, { quoted: m });
 
   await m.react('👻');
 };
