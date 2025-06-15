@@ -10,20 +10,24 @@ let handler = async (m, { conn, args }) => {
         userId = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.sender;
     }
 
-    let user = global.db.data.users[userId];
+    let user = global.db.data.users?.[userId] || {};
 
-    let name = conn.getName(userId);
+    let name = await conn.getName(userId);
     let cumpleanos = user.birth || 'No especificado';
     let genero = user.genre || 'No especificado';
-    let pareja = user.marry || 'Nadie';
+    let isMarried = userId in (global.db.data.marriages || {});
+    let partnerId = isMarried ? global.db.data.marriages[userId] : null;
+    let partnerName = partnerId ? await conn.getName(partnerId) : null;
     let description = user.description || 'Sin Descripción';
     let exp = user.exp || 0;
     let nivel = user.level || 0;
     let role = user.role || 'Sin Rango';
     let coins = user.coin || 0;
     let bankCoins = user.bank || 0;
+    
 
-    let perfil = await conn.profilePictureUrl(userId, 'image').catch(_ => 'https://raw.githubusercontent.com/The-King-Destroy/Adiciones/main/Contenido/1745522645448.jpeg');
+    let perfil = await conn.profilePictureUrl(userId, 'image')
+        .catch(_ => 'https://raw.githubusercontent.com/The-King-Destroy/Adiciones/main/Contenido/1745522645448.jpeg');
 
     let profileText = `
 「 𖤘 *Perfil De Usuario* 」
@@ -33,7 +37,7 @@ let handler = async (m, { conn, args }) => {
 ❖ *Eძᥲძ:* » ${user.age || 'Desconocida'}
 ❀ *Cᥙm⍴ᥣᥱᥲᥒ̃᥆s:* » ${cumpleanos}
 ⚥ *Gᥱᥒᥱr᥆:* » ${genero}
-♡ *Cᥲsᥲძ@:* » ${pareja}
+♡ *Cᥲsᥲძ@:* » ${partnerName || 'Nadie'}
 ❁ *⍴rᥱmіᥙm* » ${user.premium ? '✅' : '❌'}
 ✎ *Dᥱsᥴrі⍴ᥴі᥆́ᥒ:* » ${description}
 
@@ -46,7 +50,7 @@ let handler = async (m, { conn, args }) => {
 ⛃ *ᥴ᥆іᥒs ᑲᥲᥒᥴ᥆* » ${bankCoins.toLocaleString()} ${moneda}
 
 > ✧ ⍴ᥲrᥲ ᥱძі𝗍ᥲr 𝗍ᥙ ⍴ᥱr𝖿іᥣ ᥙsᥲ *#perfildates*
-  `.trim();
+`.trim();
 
     await conn.sendMessage(m.chat, { 
         text: profileText,
