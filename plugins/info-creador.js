@@ -1,4 +1,4 @@
-function handler(m, { conn}) {
+function handler(m, { conn }) {
   const suittag = '51969214380';
   const name = 'BLACK.OFC';
   const packname = '✦⃟⛧┋ ➪ _ISAGI ⛧ YOICHI_ ⚽┋⃟✧';
@@ -6,29 +6,30 @@ function handler(m, { conn}) {
   const channel = 'https://whatsapp.com/channel/0029Vb6BDQc0lwgsDN1GJ31i';
   const banner = 'https://files.catbox.moe/pp7ncd.jpg';
 
-  // Formato de vCard corregido
   const vcard = `BEGIN:VCARD
 VERSION:3.0
-N:;${name};;;
+N:${name};;;;
 FN:${name}
 ORG:BLACK
-TEL;type=CELL;type=VOICE;waid=${suittag}
+TEL;TYPE=CELL;TYPE=VOICE;waid=${suittag}:+${suittag}
 END:VCARD`;
 
-  // Enviar contacto con mensaje adicional
+  
   conn.sendMessage(m.chat, {
     text: `📌 *Información de contacto*\n\n👾 *Enlace Directo:* wa.link/uowz07\n👤 *Nombre:* ${name}\n📞 *WhatsApp:* +${suittag}\n🔗 *Canal:* [Click aquí](${channel})`,
     footer: dev,
-    buttons: [{ buttonId: `.status`, buttonText: { displayText: "🌐 ESTADO - BOT"}, type: 1}],
+    buttons: [{ buttonId: `.status`, buttonText: { displayText: "🌐 ESTADO - BOT" }, type: 1 }],
     headerType: 1
-}, { quoted: m});
+  }, { quoted: m });
 
-  // Enviar el contacto de WhatsApp
+
   conn.sendMessage(m.chat, {
     contacts: {
       displayName: name,
-      contacts: [{ vcard}]
-  },
+      contacts: [
+        { vcard }
+      ]
+    },
     contextInfo: {
       forwardingScore: 999,
       isForwarded: true,
@@ -43,7 +44,7 @@ END:VCARD`;
         renderLargerThumbnail: true
       }
     }
-  }, { quoted: m});
+  }, { quoted: m });
 }
 
 handler.help = ['owner'];
