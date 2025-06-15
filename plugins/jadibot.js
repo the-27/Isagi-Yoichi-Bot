@@ -81,11 +81,13 @@ const replyMessage = message.length === 0 ? `No hay Sub-Bots disponible.` : mess
 const totalUsers = users.length;
 const responseMessage = `
 ╭═━⬣ 𝐒𝐔𝐁𝐁𝐎𝐓𝐒 𝐉𝐀𝐃𝐈𝐁𝐎𝐓 🌹
-┃ 🏔️ 𝕆ℕ𝕃𝕀ℕ𝔼: *${totalUsers ||'0'}*
+┃ 🌴 𝕆ℕ𝕃𝕀ℕ𝔼: *${totalUsers ||'0'}*
 ╰═━━━━━━━━━━━━━━━━⬣\n
 ${replyMessage.trim()}\n═══════◆◈◆═══════`.trim();
 
-await _envio.sendFile(m.chat, img, 'jadibot.jpg', responseMessage, m, null, fake, fkontak, false, { mentions: _envio.parseMention(responseMessage) })
+await _envio.sendFile(m.chat, img, 'jadibot.jpg', responseMessage, m, null, fake, {}, fkontak, false, { mentions: _envio.parseMention(responseMessage) });
+
+//await _envio.sendFile(m.chat, img, 'jadibot.jpg', responseMessage, m, null, fake, fkontak, false, { mentions: _envio.parseMention(responseMessage) })
 break   
 }}
 
