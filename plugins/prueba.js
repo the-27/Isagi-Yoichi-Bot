@@ -7,6 +7,23 @@ let handler = async (m, { conn, usedPrefix }) => {
     let userId = m.sender;
     let taguser = '@' + userId.split("@s.whatsapp.net")[0];
 
+    const name = conn.getName(m.sender);
+    const fkontak = {
+      key: {
+        participants: "0@s.whatsapp.net",
+        remoteJid: "status@broadcast",
+        fromMe: false,
+        id: "Halo"
+      },
+      message: {
+        contactMessage: {
+          displayName: name,
+          vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;${name};;;\nFN:${name}\nitem1.TEL;waid=${userId.split("@")[0]}:${userId.split("@")[0]}\nitem1.X-ABLabel:Mobile\nEND:VCARD`
+        }
+      },
+      participant: "0@s.whatsapp.net"
+    };
+
     let images = [
       'https://files.catbox.moe/pp7ncd.jpg',
       'https://files.catbox.moe/fcbeie.jpg',
@@ -35,8 +52,9 @@ let handler = async (m, { conn, usedPrefix }) => {
 
     await conn.sendMessage(m.chat, {
       image: { url: randomImage },
-      caption: menuText
-    }, { quoted: m });
+      caption: menuText,
+      contextInfo: { externalAdReply: { title: "Isagi-Yoichi Bot", body: "Menú", thumbnailUrl: randomImage, mediaType: 1, showAdAttribution: true, renderLargerThumbnail: true } }
+    }, { quoted: fkontak });
 
     let listMessage = {
       text: '✦⃟⛧┋ ➪ _I S A G I ⛧ U L T R A_ ⚽┋⃟✧',
@@ -59,7 +77,7 @@ let handler = async (m, { conn, usedPrefix }) => {
       ]
     };
 
-    await conn.sendMessage(m.chat, listMessage, { quoted: m });
+    await conn.sendMessage(m.chat, listMessage, { quoted: fkontak });
     await m.react(emojis);
   } catch (e) {
     await m.reply(`✘ Ocurrió un error al enviar el menú\n\n${e}`);
