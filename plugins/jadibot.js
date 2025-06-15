@@ -87,7 +87,7 @@ ${replyMessage.trim()}\n═══════◆🎨◈🔗◆══════
 
 //await _envio.sendFile(m.chat, img, 'jadibot.jpg', responseMessage, m, null, fake, {}, fkontak, false, { mentions: _envio.parseMention(responseMessage) });
 
-await _envio.sendFile(m.chat, img, 'jadibot.jpg', responseMessage, m, null, fake, fkontak, false, { mentions: _envio.parseMention(responseMessage)}, {quoted: fkontak})
+await _envio.sendFile( m.chat, img, 'jadibot.jpg', responseMessage, m, null, fake, fkontak, false, { mentions: _envio.parseMention(responseMessage) })
 break   
 }}
 
