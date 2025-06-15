@@ -52,6 +52,7 @@ global.botname = ' ✦⃟⛧┋ ➪ _ＩＳＡＧＩ ⛧ ＹＯＩＣＨＩ_ ⚽
 global.wm = 'ᬊᬁ࿔᭄ྀιʂαɠι ✿ꦿ⚽ℬ𝒪𝒯᭄✿'
 global.author = 'mᥲძᥱ ᑲᥡ : 🌈ᵀ͢ᴴᴱ𝄟⏤͟͟͞͞⃝Black'
 global.dev = '© Modified by:  ꧁𓊈𒆜𝖙𝖍𝖊•𝒃𝒍𝒂𝒄𝒌𒆜𓊉꧂'
+global.bot = '͟͞𝒊𝒔𝒂𝒈𝒊 𝒚𝒐𝒊𝒄𝒉𝒊'
 global.textbot = '「 ⚽ 𝐈𝐒𝐀𝐆𝐈 - 𝐘𝐎𝐈𝐂𝐇𝐈 🌴 」• 𝙋𝙤𝙬𝙚𝙧𝙚𝙙 𝙗𝙮 ꧁⟣٭𝖙𝖍𝖊_𝚋𝚕𝚊𝚌𝚔٭⟢꧂'
 global.etiqueta = '٭𝚋𝚕𝚊𝚌𝚔٭'
 
