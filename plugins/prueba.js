@@ -16,7 +16,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     let emojis = '⚽';
 
     let menuText = `
-*_~✦═ೋ『★』ೋ═✦~_*
+  *_~✦═ೋ『★』ೋ═✦~_*
 ⚙️ *Opciones disponibles:*
 - 📥 *Menú de Descargas*
 - 🔍 *Menú de Búsquedas*
@@ -25,6 +25,7 @@ let handler = async (m, { conn, usedPrefix }) => {
 - 👾 *Menú Perfil*
 - 🌴 *Menú de Audios*
 - 🏔️ *Menu grupos*
+  *_~✦═ೋ『★』ೋ═✦~_*
 
 📌 Usa la lista para seleccionar una opción.
 
@@ -45,12 +46,13 @@ let handler = async (m, { conn, usedPrefix }) => {
         {
           title: "📂 𝐒𝐄𝐋𝐄𝐂𝐂𝐈𝐎𝐍𝐄 𝐔𝐍𝐀 𝐎𝐏𝐂𝐈𝐎𝐍:",
           rows: [
-            { title: "📥 Menú de Descargas", rowId: `${usedPrefix}menudl`, description: "Descarga contenido de YouTube, Instagram, etc." },
-            { title: "🔍 Menú de Búsquedas", rowId: `${usedPrefix}menuse`, description: "Busca imágenes, videos, info y más." },
-            { title: "🎮 Menú RPG + Economía", rowId: `${usedPrefix}menurpg`, description: "Aventura, niveles, dinero y más." },
-            { title: "👑 Menú de Owner", rowId: `${usedPrefix}dev`, description: "Opciones especiales para el dueño." },
-            { title: "👾 Menú de Perfil", rowId: `${usedPrefix}perfildates`, description: "Ver y editar perfil del usuario." },
-            { title: "📜 Audios sin Prefijo", rowId: `${usedPrefix}menu2`, description: "Audios automáticos sin escribir comando." },
+            { title: "📥 𝑴𝒆𝒏𝒖 𝒅𝒆𝒔𝒄𝒂𝒓𝒈𝒂𝒔", rowId: `${usedPrefix}menudl`, description: "Descarga contenido de YouTube, Instagram, etc." },
+            { title: "🔍 𝑴𝒆𝒏𝒖 𝒃𝒖𝒔𝒒𝒖𝒆𝒅𝒂𝒔", rowId: `${usedPrefix}menuse`, description: "Busca imágenes, videos, info y más." },
+            { title: "🎮 𝑴𝒆𝒏𝒖 𝒓𝒑𝒈 | 𝒆𝒄𝒐𝒏𝒐𝒎𝒊𝒂", rowId: `${usedPrefix}menurpg`, description: "Aventura, niveles, dinero y más." },
+            { title: "👑 𝑴𝒆𝒏𝒖 𝒐𝒘𝒏𝒆𝒓", rowId: `${usedPrefix}dev`, description: "Opciones especiales para el dueño." },
+            { title: "👾 𝑴𝒆𝒏𝒖 𝒑𝒆𝒓𝒊𝒍", rowId: `${usedPrefix}perfildates`, description: "Ver y editar perfil del usuario." },
+            { title: "🔗 𝑴𝒆𝒏𝒖 𝒂𝒅𝒎𝒊𝒏𝒔", rowId: `${usedPrefix}menugp`, description: "Lista de funciones para admins." },
+            { title: "📜 𝑴𝒆𝒏𝒖 𝒂𝒖𝒅𝒊𝒐𝒔", rowId: `${usedPrefix}menu2`, description: "Audios automáticos sin escribir comando." },
           ]
         }
       ]
