@@ -1,5 +1,6 @@
 function handler(m, { conn }) {
-  const suittag = '51969214380';
+  const suittag = "51969214380";
+  const ownerNumber = suittag + "@s.whatsapp.net";
   const name = 'BLACK.OFC';
   const packname = '✦⃟⛧┋ ➪ _ISAGI ⛧ YOICHI_ ⚽┋⃟✧';
   const dev = '© Modified by:  ꧁𓊈𒆜𝖙𝖍𝖊•𝒃𝒍𝒂𝒄𝒌𒆜𓊉꧂';
@@ -11,14 +12,16 @@ VERSION:3.0
 N:${name};;;;
 FN:${name}
 ORG:BLACK
-TEL;TYPE=CELL;TYPE=VOICE;waid=${suittag}:+${suittag}
+TEL;type=CELL;type=VOICE;waid=${suittag}:${suittag}
 END:VCARD`;
 
   
   conn.sendMessage(m.chat, {
-    text: `📌 *Información de contacto*\n\n👾 *Enlace Directo:* wa.link/uowz07\n👤 *Nombre:* ${name}\n📞 *WhatsApp:* +${suittag}\n🔗 *Canal:* [Click aquí](${channel})`,
+    text: `📌 *Información de contacto*\n\n👾 *Link:* wa.link/uowz07\n👤 *Nombre:* ${name}\n📞 *WhatsApp:* +${suittag}\n🔗 *Canal:* [Click aquí](${channel})`,
     footer: dev,
-    buttons: [{ buttonId: `.status`, buttonText: { displayText: "🌐 ESTADO - BOT" }, type: 1 }],
+    buttons: [
+      { buttonId: `.status`, buttonText: { displayText: "🌐 ESTADO - BOT" }, type: 1 },
+    ],
     headerType: 1
   }, { quoted: m });
 
