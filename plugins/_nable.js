@@ -163,12 +163,12 @@ const handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, i
     case 'antitoxicos':
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
-          global.dfail('admin', m, conn);
-          throw false;
+          global.dfail('admin', m, conn)
+          throw false
         }
       }
-      chat.antitoxic = isEnable;
-      break;    
+      chat.antiToxic = isEnable
+      break
       
     case 'antilink2':
      if (!m.isGroup) {
