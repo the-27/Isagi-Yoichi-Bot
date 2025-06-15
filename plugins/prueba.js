@@ -14,7 +14,6 @@ let handler = async (m, { conn, usedPrefix }) => {
     ];
     let randomImage = images[Math.floor(Math.random() * images.length)];
     let emojis = '⚽';
-    let error = '❌';
 
     let menuText = `
 *_~✦═ೋ『★』ೋ═✦~_*
@@ -32,11 +31,16 @@ let handler = async (m, { conn, usedPrefix }) => {
 © ISAGI-YOICHI
 `.trim();
 
+    await conn.sendMessage(m.chat, {
+      image: { url: randomImage },
+      caption: menuText
+    }, { quoted: m });
+
     let listMessage = {
-      text: menuText,
-      footer: " ✦⃟⛧┋ ➪ _I S A G I ⛧ U L T R A_ ⚽┋⃟✧",
+      text: '✦⃟⛧┋ ➪ _I S A G I ⛧ U L T R A_ ⚽┋⃟✧',
+      footer: '',
       title: "📋 ISAGI-YOICHI MENÚ 📚",
-      buttonText: "🌟 ABRIR MENÚ 🌟",
+      buttonText: "ධ⃟🌹 𝐌𝐄𝐍𝐔 𝐋𝐈𝐒𝐓",
       sections: [
         {
           title: "📂 𝐒𝐄𝐋𝐄𝐂𝐂𝐈𝐎𝐍𝐄 𝐔𝐍𝐀 𝐎𝐏𝐂𝐈𝐎𝐍:",
@@ -52,10 +56,7 @@ let handler = async (m, { conn, usedPrefix }) => {
       ]
     };
 
-    await conn.sendFile(m.chat, randomImage, 'menu.jpg', 'ධ⃟🌹 𝐌𝐄𝐍𝐔 𝐋𝐈𝐒𝐓', m);
-
     await conn.sendMessage(m.chat, listMessage, { quoted: m });
-
     await m.react(emojis);
   } catch (e) {
     await m.reply(`✘ Ocurrió un error al enviar el menú\n\n${e}`);
