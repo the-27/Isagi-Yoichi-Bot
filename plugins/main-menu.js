@@ -516,7 +516,7 @@ let handler = async (m, { conn, usedPrefix, __dirname}) => {
     const buttons = [
       { buttonId: `${usedPrefix}owner`, buttonText: { displayText: "👑 ᥴrᥱᥲძ᥆r"}, type: 1},
       { buttonId: `${usedPrefix}code`, buttonText: { displayText: "🏔️ sᥱrᑲ᥆𝗍"}, type: 1},
-      { buttonId: `${usedPrefix}menu2`, buttonText: { displayText: "📜 mᥱᥒᥙ ᥲᥙძі᥆s"}, type: 1},
+      { buttonId: `${usedPrefix}menu1`, buttonText: { displayText: "🥥 mᥱᥒᥙ ᥣіs𝗍"}, type: 1},
     ];
 
     await conn.sendMessage(m.chat, {

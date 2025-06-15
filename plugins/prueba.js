@@ -25,6 +25,7 @@ let handler = async (m, { conn, usedPrefix }) => {
 - 👾 *Menú Perfil*
 - 🌴 *Menú de Audios*
 - 🏔️ *Menu grupos*
+- 🌸 *Menu logos*
   *_~✦═ೋ『★』ೋ═✦~_*
 
 📌 Usa la lista para seleccionar una opción.
