@@ -43,6 +43,15 @@ const handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, i
       bot.antiPrivate = isEnable
       break
 
+    case 'antiarabe':
+      isAll = true
+      if (!isOwner) {
+        global.dfail('rowner', m, conn)
+        throw false
+      }
+      bot.antiarabe = isEnable
+      break
+
     case 'restrict':
     case 'restringir':
       isAll = true
@@ -234,8 +243,8 @@ const handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, i
   conn.reply(m.chat, `『✦』𝗟𝗔 𝗙𝗨𝗡𝗖𝗜𝗢𝗡「 *${type}* 」𝗦𝗘 *${isEnable ? '𝗔𝗖𝗧𝗜𝗩𝗢' : '𝗗𝗘𝗦𝗔𝗖𝗧𝗜𝗩𝗢'}* ${isAll ? '𝗣𝗔𝗥𝗔 𝗘𝗦𝗧𝗘 𝗕𝗢𝗧' : isUser ? '' : '𝗣𝗔𝗥𝗔 𝗘𝗦𝗧𝗘 𝗖𝗛𝗔𝗧'}`, m, rcanal);
 };
 
-handler.help = ['welcome', 'bienvenida', 'antiprivado', 'antiprivate', 'restrict', 'restringir', 'antibot', 'antibots', 'autoaceptar', 'aceptarauto', 'autorechazar', 'rechazarauto', 'autoresponder', 'autorespond', 'antisubbots', 'antibot2', 'modoadmin', 'soloadmin', 'reaction', 'reaccion', 'nsfw', 'modohorny', 'antispam', 'jadibotmd', 'modejadibot', 'subbots', 'detect', 'avisos', 'antilink', 'audios', 'antilink2', 'antitoxic', 'antitoxicos']
+handler.help = ['welcome', 'bienvenida', 'antiprivado', 'antiprivate', 'restrict', 'restringir', 'antibot', 'antibots', 'autoaceptar', 'aceptarauto', 'autorechazar', 'rechazarauto', 'autoresponder', 'autorespond', 'antisubbots', 'antibot2', 'modoadmin', 'soloadmin', 'reaction', 'reaccion', 'nsfw', 'modohorny', 'antispam', 'jadibotmd', 'modejadibot', 'subbots', 'detect', 'avisos', 'antilink', 'audios', 'antilink2', 'antitoxic', 'antitoxicos', 'antiarabe']
 handler.tags = ['nable'];
-handler.command = ['welcome', 'bienvenida', 'antiprivado', 'antiprivate', 'restrict', 'restringir', 'antibot', 'antibots', 'autoaceptar', 'aceptarauto', 'autorechazar', 'rechazarauto', 'autoresponder', 'autorespond', 'antisubbots', 'antibot2', 'modoadmin', 'soloadmin', 'reaction', 'reaccion', 'nsfw', 'modohorny', 'antispam', 'jadibotmd', 'modejadibot', 'subbots', 'detect', 'avisos', 'antilink', 'audios', 'antilink2', 'antitoxic', 'antitoxicos']
+handler.command = ['welcome', 'bienvenida', 'antiprivado', 'antiprivate', 'restrict', 'restringir', 'antibot', 'antibots', 'autoaceptar', 'aceptarauto', 'autorechazar', 'rechazarauto', 'autoresponder', 'autorespond', 'antisubbots', 'antibot2', 'modoadmin', 'soloadmin', 'reaction', 'reaccion', 'nsfw', 'modohorny', 'antispam', 'jadibotmd', 'modejadibot', 'subbots', 'detect', 'avisos', 'antilink', 'audios', 'antilink2', 'antitoxic', 'antitoxicos', 'antiarabe']
 
 export default handler
