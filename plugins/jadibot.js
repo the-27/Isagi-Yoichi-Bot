@@ -83,11 +83,11 @@ const responseMessage = `
 ╭═━⬣ 𝐒𝐔𝐁𝐁𝐎𝐓𝐒 𝐉𝐀𝐃𝐈𝐁𝐎𝐓 🌹
 ┃ 🌴 𝕆ℕ𝕃𝕀ℕ𝔼: *${totalUsers ||'0'}*
 ╰═━━━━━━━━━━━━━━━━⬣\n
-${replyMessage.trim()}\n═══════◆◈◆═══════`.trim();
+${replyMessage.trim()}\n═══════◆🎨◈🔗◆═══════`.trim();
 
-await _envio.sendFile(m.chat, img, 'jadibot.jpg', responseMessage, m, null, fake, {}, fkontak, false, { mentions: _envio.parseMention(responseMessage) });
+//await _envio.sendFile(m.chat, img, 'jadibot.jpg', responseMessage, m, null, fake, {}, fkontak, false, { mentions: _envio.parseMention(responseMessage) });
 
-//await _envio.sendFile(m.chat, img, 'jadibot.jpg', responseMessage, m, null, fake, fkontak, false, { mentions: _envio.parseMention(responseMessage) })
+await _envio.sendFile(m.chat, img, 'jadibot.jpg', responseMessage, m, null, fake, fkontak, false, { mentions: _envio.parseMention(responseMessage)}, {quoted: fkontak})
 break   
 }}
 
