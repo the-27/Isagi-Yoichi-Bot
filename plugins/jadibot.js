@@ -72,21 +72,20 @@ return resultado;
 }
 const message = users.map((v, index) => `
 ╭━━━━━━━━━━━━━━━━╾
-┃╼⟪ SUB - BOT: \`${index + 1}\` ⟫╾
-┃ 🪀 *𝙐𝙎𝙐𝘼𝙍𝙄𝙊:* ${v.user.name || '𝐒𝐔𝐁 𝐁𝐎𝐓 ☘︎'}
-┃ 📘 *𝙊𝙉𝙇𝙄𝙉𝙀:* ${ v.uptime ? convertirMsADiasHorasMinutosSegundos(Date.now() - v.uptime) : 'Desconocido'}
-┃ 🧩 *𝙇𝙄𝙉𝙆:* wa.me/${v.user.jid.replace(/[^0-9]/g, '')}?text=${usedPrefix}estado
+╰─⬣ SUB - BOT: \`${index + 1}\`
+┃⁖ฺ۟̇࣪·֗٬̤⃟🤍  *𝙐𝙎𝙐𝘼𝙍𝙄𝙊:* ${v.user.name || '𝐒𝐔𝐁 𝐁𝐎𝐓 ☘︎'}
+┃⁖ฺ۟̇࣪·֗٬̤⃟⚙️ *𝙊𝙉𝙇𝙄𝙉𝙀:* ${ v.uptime ? convertirMsADiasHorasMinutosSegundos(Date.now() - v.uptime) : 'Desconocido'}
+┃⁖ฺ۟̇࣪·֗٬̤⃟🍃 *𝙇𝙄𝙉𝙆:* wa.me/${v.user.jid.replace(/[^0-9]/g, '')}?text=${usedPrefix}estado
 ╰━━▣`).join('\n\n');
 const replyMessage = message.length === 0 ? `No hay Sub-Bots disponible.` : message;
 const totalUsers = users.length;
 const responseMessage = `
-⭑『 𝗦𝗨𝗕𝗕𝗢𝗧𝗦 𝗖𝗢𝗡𝗘𝗖𝗧𝗔𝗗𝗢𝗦 』⭑
-╭═━━━━━━━⬣
-┃ 🏔️ 𝐓𝐨𝐭𝐚𝐥: *${totalUsers ||'0'}*
-╰═━━━━━━━⬣\n
+╭═━⬣ 𝐒𝐔𝐁𝐁𝐎𝐓𝐒 𝐉𝐀𝐃𝐈𝐁𝐎𝐓 🌹
+┃ 🏔️ 𝕆ℕ𝕃𝕀ℕ𝔼: *${totalUsers ||'0'}*
+╰═━━━━━━━━━━━━━━━━⬣\n
 ${replyMessage.trim()}\n═══════◆◈◆═══════`.trim();
 
-await _envio.sendFile(m.chat, img, 'jadibot.jpg', responseMessage, m, null, fake, false, { mentions: _envio.parseMention(responseMessage) })
+await _envio.sendFile(m.chat, img, 'jadibot.jpg', responseMessage, m, null, fake, fkontak, false, { mentions: _envio.parseMention(responseMessage) })
 break   
 }}
 
