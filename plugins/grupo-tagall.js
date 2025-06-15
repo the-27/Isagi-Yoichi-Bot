@@ -22,7 +22,7 @@ const handler = async (m, { isOwner, isAdmin, conn, text, participants, args, co
   }
   teks += `╰══⌬\n> ${dev}`;
 
-  conn.sendMessage(m.chat, { text: teks, fkontak, mentions: participants.map((a) => a.id) });
+  conn.sendMessage(m.chat, { text: teks, mentions: participants.map((a) => a.id) }, { quoted: fkontak });
 };
 
 handler.help = ['todos *<mensaje opcional>*'];
