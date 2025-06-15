@@ -44,7 +44,10 @@ let handler = async (m, { conn, args }) => {
 ❥ 🎃 _.xnxxdl_
 ❥ 🎃 _.xvideosdl_
 ❥ 🎃 _.ytmp4doc_ 
+❥ 🎃 _.playstore *<url>*
 ❥ 🎃 _.ytmp3doc_ 
+❥ 🎃 _.aplay2_
+❥ 🎃 _.capcut *<url>*_
 ❥ 🎃 _.yta_
 ❥ 🎃 _.ytv_
 ❥ 🎃 _.sound_

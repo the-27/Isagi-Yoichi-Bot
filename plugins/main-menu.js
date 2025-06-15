@@ -168,6 +168,7 @@ let handler = async (m, { conn, usedPrefix, __dirname}) => {
 │ ≡◦ .ppt 
 │ ≡◦ .pvp
 │ ≡◦ .sopa
+│ ≡◦ .acertijo
 │ ≡◦ .ttt
 ╰───────────────╯
 
@@ -186,6 +187,8 @@ let handler = async (m, { conn, usedPrefix, __dirname}) => {
 │ ≡◦ .dance/bailar @tag
 │ ≡◦ .drunk/borracho @tag
 │ ≡◦ .eat/comer @tag
+│ ≡◦ .messi
+│ ≡◦ .cr7
 │ ≡◦ .facepalm/palmada @tag
 │ ≡◦ .happy/feliz @tag
 │ ≡◦ .hello/hola @tag
@@ -243,6 +246,9 @@ let handler = async (m, { conn, usedPrefix, __dirname}) => {
 │ ≡◦ .apk2 <busqueda>
 │ ≡◦ .npmdl
 │ ≡◦ .tt2
+│ ≡◦ .playstore *<url>*
+│ ≡◦ .aplay2 • applemusic2
+│ ≡◦ .capcut *<url>*
 │ ≡◦ .play
 │ ≡◦ .play2
 │ ≡◦ .ytmp3doc

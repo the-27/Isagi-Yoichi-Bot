@@ -26,8 +26,8 @@ let handler = async (m, { conn, args }) => {
     let perfil = await conn.profilePictureUrl(userId, 'image').catch(_ => 'https://raw.githubusercontent.com/The-King-Destroy/Adiciones/main/Contenido/1745522645448.jpeg');
 
     let profileText = `
-「 𖤘 *Perfil De Usuario* 」
-◢@${userId.split('@')[0]}◤
+=͟͟͞͞ ✿  *𝖯𝖾𝗋𝖿𝗂𝗅 𝖽𝖾𝗅 𝖴𝗌𝗎𝖺𝗋𝗂𝗈  ←╮*
+╰ ࣪ ˖ ∿ @${userId.split('@')[0]}◤
 
 ❀ *N᥆mᑲrᥱ:* ${name}
 ❖ *Eძᥲძ:* » ${user.age || 'Desconocida'}
