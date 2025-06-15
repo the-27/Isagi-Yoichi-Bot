@@ -30,6 +30,6 @@ handler.tags = ['grupo'];
 handler.command = ['todos', 'invocar', 'tagall', 'marcar']
 handler.admin = true;
 handler.group = true;
-handler.coin = 4; 
+//handler.coin = 4; 
 
 export default handler;

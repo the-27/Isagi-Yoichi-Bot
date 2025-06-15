@@ -246,7 +246,8 @@ let handler = async (m, { conn, usedPrefix, __dirname}) => {
 │ ≡◦ .apk2 <busqueda>
 │ ≡◦ .npmdl
 │ ≡◦ .tt2
-│ ≡◦ .playstore *<url>*
+│ ≡◦ .kwaidl
+│ ≡◦ .likee *<url>*
 │ ≡◦ .aplay2 • applemusic2
 │ ≡◦ .capcut *<url>*
 │ ≡◦ .play
