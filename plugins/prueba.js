@@ -53,7 +53,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     await conn.sendMessage(m.chat, {
       image: { url: randomImage },
       caption: menuText,
-      contextInfo: { externalAdReply: { title: "Isagi-Yoichi Bot", body: "Menú", thumbnailUrl: randomImage, mediaType: 1, showAdAttribution: true, renderLargerThumbnail: true } }
+      contextInfo: { externalAdReply: { title: "Isagi-Yoichi Bot", body: "Menú list", thumbnailUrl: randomImage, mediaType: 1, showAdAttribution: true, renderLargerThumbnail: true } }
     }, { quoted: fkontak });
 
     let listMessage = {
