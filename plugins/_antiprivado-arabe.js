@@ -9,7 +9,7 @@ export async function before(m, { conn, isAdmin, isBotAdmin, isOwner, isROwner }
   if (m.chat === '120363416409380841@newsletter') return true;
 
   // Lista de prefijos de países árabes
-  const arabPrefixes = ['+20', '+212', '+213', '+216', '+218', '+971', '+966', '+965', '+962', '+973', '+974'];
+  const arabPrefixes = ['+212', '+971', '+20', '+966', '+964', '+963', '+973', '+968', '+974'];
 
   // Extraer número en formato internacional
   const senderNumber = '+' + m.sender.split('@')[0];
