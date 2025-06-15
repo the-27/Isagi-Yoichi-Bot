@@ -1,47 +1,46 @@
 import gplay from 'google-play-scraper';
 import fetch from 'node-fetch';
 
-let handler = async (m, { conn, args, usedPrefix: prefix, command }) => {
-
+let handler = async (m, { conn, args, usedPrefix, command }) => {
     if (!args[0]) {
-        console.log('Argumento vacío, enviando mensaje de ayuda');
-        return conn.reply(m.chat, `*${xdownload} Ingresa un enlace de descarga de la PlayStore.*\n*> *\`Ejemplo:\`* ${prefix}playstore https://play.google.com/store/apps/details?id=com.whatsapp`, m);
+        return conn.reply(m.chat, `❌ Ingresa un enlace de la Play Store.\n📌 Ejemplo:\n${usedPrefix + command} https://play.google.com/store/apps/details?id=com.whatsapp`, m);
     }
 
-    m.react('⌛');
+    await m.react('⏳');
 
-    const url = args[0];
-
+    let url = args[0];
     let packageName;
+
     try {
-        packageName = new URL(url).searchParams.get("id");
-        if (!packageName) throw new Error();
-    } catch {
-        return conn.reply(m.chat, `*❌ La URL proporcionada no es válida o no contiene un ID de aplicación.*`, m);
+        const parsedUrl = new URL(url);
+        packageName = parsedUrl.searchParams.get("id");
+        if (!packageName) throw new Error("ID inválido");
+    } catch (e) {
+        return conn.reply(m.chat, `❌ URL inválida. Asegúrate de que sea del tipo:\nhttps://play.google.com/store/apps/details?id=...`, m);
     }
 
-    console.log(`ID de paquete: ${packageName}`);
-
-    let info;
+    let appInfo;
     try {
-        info = await gplay.app({ appId: packageName });
+        appInfo = await gplay.app({ appId: packageName });
     } catch (error) {
-        console.error(error);
-        return conn.reply(m.chat, `*❌ No se pudo encontrar la aplicación. Asegúrate de que el enlace sea correcto.*`, m);
+        console.error('Error al obtener app:', error);
+        return conn.reply(m.chat, `❌ No se encontró la aplicación. Revisa si el ID es correcto.`, m);
     }
 
-    const h = info.title;
-    console.log(`Título de la aplicación: ${h}\nID de la aplicación: ${info.appId}`);
+    const appTitle = appInfo.title;
+    const apkLink = `https://d.apkpure.com/b/APK/${appInfo.appId}?version=latest`;
 
-    let link = `https://d.apkpure.com/b/APK/${info.appId}?version=latest`;
+    await conn.sendFile(m.chat, apkLink, `${appTitle}.apk`, '', m, false, {
+        mimetype: 'application/vnd.android.package-archive',
+        asDocument: true
+    });
 
-    conn.sendFile(m.chat, link, `${h}.apk`, ``, m, false, { mimetype: 'application/vnd.android.package-archive', asDocument: true });
-    m.react('✅️');
+    await m.react('✅');
+    return conn.reply(m.chat, `✅ Enviando *${appTitle}*...\n🔗 APK descargada desde APKPure`, m);
+};
 
-    conn.reply(m.chat, `*🚀 Se esta enviando \`${h}\` Aguarde un momento*`, m);
-}
-
-handler.help = ['playstore *<url>*']; 
+handler.help = ['playstore <url>'];
 handler.tags = ['descargas'];
-handler.command = ['playstore'];
+handler.command = /^playstore$/i; 
+
 export default handler;
