@@ -1,62 +1,61 @@
-import { promisify } from 'util';
-const delay = promisify(setTimeout);
+import fetch from 'node-fetch';
 
-function handler(m, { conn }) {
-  const suittag = "51969214380";
-  const ownerNumber = suittag + "@s.whatsapp.net";
-  const name = 'BLACK.OFC';
-  const packname = '✦⃟⛧┋ ➪ _ISAGI ⛧ YOICHI_ ⚽┋⃟✧';
-  const dev = '© Modified by: ꧁𓊈𒆜𝖙𝖍𝖊•𝒃𝒍𝒂𝒄𝒌𒆜𓊉꧂';
-  const channel = 'https://whatsapp.com/channel/0029Vb6BDQc0lwgsDN1GJ31i';
-  const banner = 'https://files.catbox.moe/pp7ncd.jpg';
+let handler = async (m, { conn, usedPrefix, text, args, command }) => {
+  await m.react('👻');
 
-  const vcard = `BEGIN:VCARD
-VERSION:3.0
-N:${name};;;;
-FN:${name}
-ORG:BLACK
-TEL;type=CELL;type=VOICE;waid=${suittag}:${suittag}
-EMAIL:blackoficial2025@gmail.com
-ADR:;;Lima;;;Peru
-END:VCARD`;
+  let who = m.mentionedJid && m.mentionedJid[0]
+    ? m.mentionedJid[0]
+    : m.fromMe
+    ? conn.user.jid
+    : m.sender;
+  let name = await conn.getName(who);
+  let edtr = `@${m.sender.split('@')[0]}`;
+  let username = await conn.getName(m.sender);
 
-  conn.sendMessage(m.chat, {
-    text: `📌 *Información de contacto*\n\n👾 *Link:* wa.link/uowz07\n👤 *Nombre:* ${name}\n📞 *WhatsApp:* +${suittag}\n🔗 *Canal:* [Click aquí](${channel})`,
-    footer: dev,
-    buttons: [
-      { buttonId: `.status`, buttonText: { displayText: "🌐 ESTADO - BOT" }, type: 1 }
-    ],
-    headerType: 1
-  }, { quoted: m });
+  let suittag = '51969214380';
+  let black = '꧁𓊈𒆜𝖙𝖍𝖊•𝒃𝒍𝒂𝒄𝒌𒆜𓊉꧂';
+  let channel = 'https://whatsapp.com/channel/0029Vb6BDQc0lwgsDN1GJ31i';
+  let imageUrl = 'https://files.catbox.moe/tlz2zt.jpg';
+  let dev = '© 𝘉𝘺 𝘉𝘓𝘈𝘊𝘒';
 
-  
-  await delay(1500);
+  // VCARD
+  let list = [
+    {
+      displayName: `${black}`,
+      vcard: `BEGIN:VCARD\nVERSION:3.0\nFN:${black}\nitem1.TEL;waid=${suittag}:${suittag}\nitem1.X-ABLabel:Número\nitem2.EMAIL;type=INTERNET:blackoficial2025@gmail.com\nitem2.X-ABLabel:Email\nitem3.URL:https://www.instagram.com/crowbot_wa\nitem3.X-ABLabel:Instagram\nitem4.ADR:;; Perú 🇵🇪;;;;\nitem4.X-ABLabel:Región\nEND:VCARD`
+    }
+  ];
 
-  conn.sendMessage(m.chat, {
+  await conn.sendMessage(m.chat, {
     contacts: {
-      displayName: name,
-      contacts: [
-        { vcard }
-      ]
+      displayName: `${list.length} Contacto`,
+      contacts: list
     },
     contextInfo: {
-      forwardingScore: 999,
-      isForwarded: true,
       externalAdReply: {
         showAdAttribution: true,
-        title: packname,
+        title: 'һ᥆ᥣᥲ ᥴ᥆ᥒ𝗍ᥲᥴ𝗍᥆ ძᥱ mі ᥴrᥱᥲძ᥆r👑',
         body: dev,
-        thumbnailUrl: banner,
+        thumbnailUrl: imageUrl,
+        sourceUrl: 'https://github.com/the-27',
         mediaType: 1,
-        mediaUrl: channel,
-        sourceUrl: channel,
         renderLargerThumbnail: true
       }
     }
   }, { quoted: m });
-}
 
-handler.help = ['owner'];
+  let responseText = `┏━━━━━━━━━━━━━━━━━━━┓
+┃ 🦠 𝒄𝒐𝒏𝒕𝒂𝒄𝒕𝒐 𝒅𝒆𝒍 𝒄𝒓𝒆𝒂𝒅𝒐𝒓 ⚡
+┣━━━━━━━━━━━━━━━━━━━┫
+┃ 👤 *NOMBRE:* ${black}
+┃ 👾 *LINK:* wa.me/${suittag}
+┃ 🌹 *CANAL:* ${channel}
+┃ 🌴 wa.link/uowz07
+┗━━━━━━━━━━━━━━━━━━━┛`.trim();
+  await conn.reply(m.chat, responseText, fkontak);
+};
+
+handler.help = ['owner', 'creator'];
 handler.tags = ['main'];
 handler.command = ['owner', 'creator', 'creador', 'dueño'];
 
