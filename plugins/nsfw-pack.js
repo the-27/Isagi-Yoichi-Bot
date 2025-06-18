@@ -32,6 +32,8 @@ let handler = async (m, { conn, usedPrefix}) => {
   await m.react('✅'); 
 };
 
+handler.help = ['pack'];
+handler.tag = ['nsfw'];
 handler.command = ['pack'];
 
 export default handler;
