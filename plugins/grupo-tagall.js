@@ -29,7 +29,7 @@ const handler = async (m, { isOwner, isAdmin, conn, text, participants, args, co
 
   const teks = teksLines.join('\n');
 
-  const quotedMsg = typeof fkontak : m;
+  const quotedMsg = typeof fkontak !== 'undefined' ? fkontak : m;
 
   await conn.sendMessage(m.chat, {
     text: teks,
@@ -44,7 +44,6 @@ handler.admin = true;
 handler.group = true;
 
 export default handler;
-
 
 /*const handler = async (m, { isOwner, isAdmin, conn, text, participants, args, command, usedPrefix }) => {
   if (usedPrefix == 'a' || usedPrefix == 'A') return;
