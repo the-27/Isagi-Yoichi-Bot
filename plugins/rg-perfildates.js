@@ -1,16 +1,16 @@
 let handler = async (m, { conn, usedPrefix }) => {
   let img = `https://files.catbox.moe/3gxuzq.jpg`;
   let txt = `╭ - - - - - - -✎ 🌹   ❜ ⊹
-*︵₊˚꒰Ꮺ Manual para editar tu perfil*
-*꒰ ୨⚔️୧─・┈・୨⚡୧・┈・─୨⚔️୧ ꒱*
-₊˚୨🍧 *${usedPrefix}setbirth* ✦ Edita tu fecha de cumpleaños 🎂.
-₊˚୨💥 *${usedPrefix}delbirth* ✦ Elimina tu fecha de cumpleaños 🎂.
-₊˚୨⚔️ *${usedPrefix}setdesc* ♡ Edita la descripción de tu perfil.
-₊˚୨🍁 *${usedPrefix}deldesc* ♡ Elimina la descripción de tu perfil.
-₊˚୨🌲 *${usedPrefix}setgenre* ✐ Edita tu género en tu perfil.
-₊˚୨🏜️ *${usedPrefix}delgenre* ✐ Elimina tu género en tu perfil.
-₊˚୨❄️ *${usedPrefix}marry* ᰔᩚ Cásate con una persona.
-₊˚୨🍥 *${usedPrefix}divorce* ঔ Divórciate de una persona.
+*︵₊˚꒰Ꮺ мαиυαℓ ραяα є∂ιταя τυ ρєяƒιℓ*
+*꒰ ୨⚽୧─・┈・୨⚡୧・┈・─୨🥥୧ ꒱*
+₊˚୨🍧 *${usedPrefix}ѕєτϐιяτн* ✦ є∂ιτα τυ ƒєϲнα ∂є ϲυмρℓєαñοѕ 🎂.
+₊˚୨💥 *${usedPrefix}∂єℓϐιяτн* ✦ єℓιмιиα τυ ƒєϲнα ∂є ϲυмρℓєαñοѕ 🎂.
+₊˚୨⚔️ *${usedPrefix}ѕєτ∂єѕϲ* ♡ є∂ιτα ℓα ∂єѕϲяιρϲιóи ∂є τυ ρєяƒιℓ.
+₊˚୨🍁 *${usedPrefix}∂єℓ∂єѕϲ* ♡ єℓιмιиα ℓα ∂єѕϲяιρϲιóи ∂є τυ ρєяƒιℓ.
+₊˚୨🌲 *${usedPrefix}ѕєτgєияє* ✐ є∂ιτα τυ géиєяο єи τυ ρєяƒιℓ.
+₊˚୨🏜️ *${usedPrefix}∂єℓgєияє* ✐ єℓιмιиα τυ géиєяο єи τυ ρєяƒιℓ.
+₊˚୨❄️ *${usedPrefix}мαяяγ* ᰔᩚ ϲáѕατє ϲοи υиα ρєяѕοиα.
+₊˚୨🦠 *${usedPrefix}∂ινοяϲє* ঔ ∂ινóяϲιατє ∂є υиα ρєяѕοиα.
 ╰───────────────⋆`;
 
   const buttons = [
@@ -23,9 +23,8 @@ let handler = async (m, { conn, usedPrefix }) => {
       buttonText: { displayText: "🏓 ⍴іᥒg" }, type: 1
     },
   ];
-
-  // Crear el fkontak válido
-  const fkontak = {
+  
+   const fkontak = {
     key: {
       participants: "0@s.whatsapp.net",
       remoteJid: "status@broadcast",
@@ -40,6 +39,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     },
     participant: "0@s.whatsapp.net"
   };
+  
 
   await conn.sendMessage(m.chat, {
     image: { url: img },
@@ -47,9 +47,8 @@ let handler = async (m, { conn, usedPrefix }) => {
     footer: " ✦⃟⛧┋ ➪ _ISAGI ⛧ U L T R A_ ⚽┋⃟✧",
     buttons: buttons,
     viewOnce: true,
-    contextInfo: { forwardingScore: 999, isForwarded: true, ...fkontak }
+    contextInfo: { forwardingScore: 999, isForwarded: true, fkontak }
   }, { quoted: m });
-
   await m.react('👻');
 };
 

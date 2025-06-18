@@ -14,7 +14,7 @@ let handler = async (m, { conn, usedPrefix, text, args, command }) => {
 
   let suittag = '51969214380';
   let black = '꧁𓊈𒆜𝖙𝖍𝖊•𝒃𝒍𝒂𝒄𝒌𒆜𓊉꧂';
-  let imageUrl = 'https://files.catbox.moe/tlz2zt.jpg';
+  let imageUrl = 'https://files.catbox.moe/pp7ncd.jpg';
   let dev = '© 𝘉𝘺 𝘉𝘓𝘈𝘊𝘒';
 
   // VCARD
@@ -45,9 +45,11 @@ let handler = async (m, { conn, usedPrefix, text, args, command }) => {
 
   let responseText = `┏━━━━━━━━━━━━━━━━━━━┓
 ┃ 🦠 𝒄𝒐𝒏𝒕𝒂𝒄𝒕𝒐 𝒅𝒆𝒍 𝒄𝒓𝒆𝒂𝒅𝒐𝒓 ⚡
-┣━━━━━━━━━━━━━━━━━━━┫
+┣﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌𝔁ꔫ
 ┃ 👤 *NOMBRE:* ${black}
+┃࿙࿚࿙࿚࿙࿚࿙࿚࿙࿚࿙࿚࿙࿚࿙࿚࿙࿚࿙࿚࿙࿚࿙࿚
 ┃ 👾 *LINK:* wa.me/${suittag}
+┃࿙࿚࿙࿚࿙࿚࿙࿚࿙࿚࿙࿚࿙࿚࿙࿚࿙࿚࿙࿚࿙࿚࿙࿚
 ┃ 🌴 wa.link/uowz07
 ┗━━━━━━━━━━━━━━━━━━━┛`.trim();
   await conn.reply(m.chat, responseText, fkontak);
