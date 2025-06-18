@@ -14,7 +14,6 @@ let handler = async (m, { conn, usedPrefix, text, args, command }) => {
 
   let suittag = '51969214380';
   let black = '꧁𓊈𒆜𝖙𝖍𝖊•𝒃𝒍𝒂𝒄𝒌𒆜𓊉꧂';
-  let channel = 'https://whatsapp.com/channel/0029Vb6BDQc0lwgsDN1GJ31i';
   let imageUrl = 'https://files.catbox.moe/tlz2zt.jpg';
   let dev = '© 𝘉𝘺 𝘉𝘓𝘈𝘊𝘒';
 
@@ -49,7 +48,6 @@ let handler = async (m, { conn, usedPrefix, text, args, command }) => {
 ┣━━━━━━━━━━━━━━━━━━━┫
 ┃ 👤 *NOMBRE:* ${black}
 ┃ 👾 *LINK:* wa.me/${suittag}
-┃ 🌹 *CANAL:* ${channel}
 ┃ 🌴 wa.link/uowz07
 ┗━━━━━━━━━━━━━━━━━━━┛`.trim();
   await conn.reply(m.chat, responseText, fkontak);

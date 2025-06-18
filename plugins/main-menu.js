@@ -1,4 +1,4 @@
-
+/*
 import fs from 'fs'
 import fetch from 'node-fetch'
 import { xpRange} from '../lib/levelling.js'
@@ -551,4 +551,124 @@ function clockString(ms) {
     let minutes = Math.floor((ms / (1000 * 60)) % 60);
     let hours = Math.floor((ms / (1000 * 60 * 60)) % 24);
     return `\`${hours}H\` \`${minutes}M\` \`${seconds}S\``;
+}
+*/
+
+
+
+import fs from 'fs';
+import fetch from 'node-fetch';
+import { xpRange } from '../lib/levelling.js';
+
+let handler = async (m, { conn, usedPrefix, __dirname }) => {
+  try {
+    let userId = m.sender;
+    let userData = global.db.data.users[userId] || {};
+    let exp = userData.exp || 0;
+    let coin = userData.coin || 0;
+    let level = userData.level || 0;
+    let role = userData.role || 'Sin Rango';
+
+    let name = await conn.getName(userId);
+    let _uptime = process.uptime() * 1000;
+    let uptime = clockString(_uptime);
+    let totalreg = Object.keys(global.db.data.users).length;
+    let mention = '@' + userId.split('@')[0];
+    let totalCommands = Object.values(global.plugins).filter(v => v.help && v.tags).length;
+    let med = '⁖ฺ۟̇࣪·֗٬̤⃟✦';
+    let img = 'https://files.catbox.moe/irlyvc.jpg';
+
+    let menu = `
+╭━═┅═━───────────
+┃ *❤️ Hola ${mention}, soy Isagi Yoichi*
+╰━═┅═━───────────
+
+╭══〔 🌹 INFO – BOT 🌴 〕══╮
+┃ 🧃 *OWNER*: ofc
+┃ 🍡 *MODO*: PRIVADO
+┃ 🥧 *BOT*: ${(conn.user.jid === global.conn.user.jid) ? 'ᴏғɪᴄɪᴀʟ 🅞' : 'sᴜʙ‑ʙᴏᴛ 🅢'}
+┃ 🍟 *USUARIOS V*: ${totalreg}
+┃ 🪀 *COMANDOS*: ${totalCommands}
+┃ ⏱ *TIEMPO ACTIVO*: ${uptime}
+╰═════════════════════╯
+
+╭══〔 🦠 INFO – USUARIO 💫 〕══╮
+┃ 👤 *CLIENTE:* ${name}
+┃ ⚡ *EXPERIENCIA:* ${exp}
+┃ 📊 *NIVEL:* ${level}
+┃ 🧮 *COINS:* ${coin}
+┃ 🧬 *RANGO:* ${role}
+╰═════════════════════╯
+
+ꪶ𝆺𝆭𝆹𝅥ᜓ᮫߭݊🌹 ʟɪsᴛa ᴅe ᴄᴏᴍᴀɴᴅᴏs 🍃݊߭𝆺𝅥𝆹𝆭ꫂ
+─҉͙⁘✧⋄⋆⋅⋆⋄✧⋄⋆⋅⋆⋄✧⋄⋆⋅⋆⋄✧⋄⋆⋅⋆⋄✧*
+╭──⬣
+│┆ 🏔️ *INFO*
+│ ${med} .menu
+│ ${med} .uptime
+│ ${med} .script
+│ ${med} .staff
+│ ${med} .creador
+│ ${med} .grupos
+│ ${med} .estado
+│ ${med} .infobot
+│ ${med} .sug
+│ ${med} .ping
+│ ${med} .reportar <texto>
+│ ${med} .reglas
+│ ${med} .speed
+│ ${med} .sistema
+│ ${med} .usuarios
+│ ${med} .ds
+│ ${med} .funciones
+│ ${med} .editautoresponder
+╰────────────────────╯
+
+╭──⬣
+│┆ 🌹 *MENÚ BOT*
+│ ${med} .dev – Menu owner
+│ ${med} .menuse – Menu search
+│ ${med} .menudl – Menu descargas
+│ ${med} .menulogos – Logos
+│ ${med} .menu18 – Menu hot
+│ ${med} .menugp – Menu grupo
+│ ${med} .menu2 – Menu audios
+│ ${med} .menurpg – Menu economía
+╰────────────────────╯
+
+© ${textbot}
+`.trim();
+
+    let buttons = [
+      { buttonId: `${usedPrefix}owner`, buttonText: { displayText: '👑 ᥴrᥱᥲძ᥆r'}, type: 1 },
+      { buttonId: `${usedPrefix}code`, buttonText: { displayText: '🏔️ 🏔️ sᥱrᑲ᥆𝗍'}, type: 1 },
+      { buttonId: `${usedPrefix}menu1`, buttonText: { displayText: '🥥 mᥱᥒᥙ ᥣіs𝗍'}, type: 1 }
+    ];
+
+    await conn.sendMessage(m.chat, {
+      image: { url: img },
+      caption: menu,
+      buttons,
+      footer: 'WHATSAPP BOT ✦⃟⛧ 𝑰𝑺𝑨𝑮𝑰 𝒀𝑶𝑰𝑪𝑯𝑰 ⚽',
+      viewOnce: true
+    }, { quoted: m });
+
+    await m.react('⚽');
+  } catch (e) {
+    console.error(e);
+    await m.reply(`✘ Ocurrió un error al enviar el menú:\n${e}`);
+    await m.react('✖️');
+  }
+};
+
+handler.help = ['menu'];
+handler.tags = ['main'];
+handler.command = ['menu', 'help', 'menú', 'allmenú', 'allmenu', 'menucompleto'];
+export default handler;
+
+function clockString(ms) {
+  let s = Math.floor(ms / 1000) % 60;
+  let m = Math.floor(ms / (1000 * 60)) % 60;
+  let h = Math.floor(ms / (1000 * 60 * 60)) % 24;
+  return `\`${h}H\` \`${m}M\` \`${s}S\``;
 }
