@@ -584,24 +584,24 @@ let handler = async (m, { conn, usedPrefix, __dirname }) => {
 © ${textbot}
 `.trim();
 
-    let buttons = [
-      { buttonId: `${usedPrefix}owner`, buttonText: { displayText: '👑 ᥴrᥱᥲძ᥆r'}, type: 1 },
-      { buttonId: `${usedPrefix}code`, buttonText: { displayText: '🏔️ sᥱrᑲ᥆𝗍'}, type: 1 },
-      { buttonId: `${usedPrefix}menu1`, buttonText: { displayText: '🥥 mᥱᥒᥙ ᥣіs𝗍'}, type: 1 }
+    const buttons = [
+      { buttonId: `${usedPrefix}owner`, buttonText: { displayText: '👑 ᥴrᥱᥲძ᥆r' }, type: 1 },
+      { buttonId: `${usedPrefix}code`, buttonText: { displayText: '🏔️ sᥱrᑲ᥆𝗍' }, type: 1 },
+      { buttonId: `${usedPrefix}menu1`, buttonText: { displayText: '🥥 mᥱᥒᥙ ᥣіs𝗍' }, type: 1 }
     ];
 
     await conn.sendMessage(m.chat, {
       image: { url: img },
       caption: menu,
-      buttons,
       footer: 'WHATSAPP BOT ✦⃟⛧ 𝑰𝑺𝑨𝑮𝑰 𝒀𝑶𝑰𝑪𝑯𝑰 ⚽',
-      viewOnce: true
+      buttons: buttons,
+      mentions: [userId]
     }, { quoted: m });
 
     await m.react('⚽');
   } catch (e) {
     console.error(e);
-    await m.reply(`✘ Ocurrió un error al enviar el menú:\n${e}`);
+    await m.reply(`✘ Ocurrió un error al enviar el menú:\n${e.message}`);
     await m.react('✖️');
   }
 };
