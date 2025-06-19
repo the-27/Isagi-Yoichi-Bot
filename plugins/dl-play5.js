@@ -13,21 +13,19 @@ const handler = async (m, { conn, command, args, text, usedPrefix }) => {
   try {
     const yt_play = await search(args.join(' '));
     if (!yt_play.length) throw new Error('No se encontraron resultados');
-    
-    const url = yt_play[0].url;
 
     let txt = `
 ╔═ ❲ 🌲 𝙰𝚂𝚃𝚁𝙾 - 𝙱𝙾𝚃 ⚡ ❳ ═╗
 ║       🥥 PLAY LIST 🌴
-╠══╦════════════════╣
-║💫║ *𝚃𝙸𝚃𝚄𝙻𝙾:* ${yt_play[0].title}
-╠══╬════════════════╣
-║🥞║ *𝙿𝚄𝙱𝙻𝙸𝙲𝙰𝙳𝙾:* ${yt_play[0].ago}
-╠══╬════════════════╣
-║🌹║ *𝙳𝚄𝚁𝙰𝙲𝙸𝙾𝙽:* ${secondString(yt_play[0].duration.seconds)}
-╠══╬════════════════╣
-║🍡║ *𝙻𝙸𝙽𝙺:* ${url}
-╚══╩════════════════╝`;
+╠═══════════════════╣
+║💫 *𝚃𝙸𝚃𝚄𝙻𝙾:* ${yt_play[0].title}
+╠═══════════════════╣
+║🥞 *𝙿𝚄𝙱𝙻𝙸𝙲𝙰𝙳𝙾:* ${yt_play[0].ago}
+╠═══════════════════╣
+║🌹 *𝙳𝚄𝚁𝙰𝙲𝙸𝙾𝙽:* ${secondString(yt_play[0].duration.seconds)}
+╠═══════════════════╣
+║🍡 *𝙻𝙸𝙽𝙺:* ${yt_play[0].url}
+╚═══════════════════╝`;
 
     let listSections = [{
       title: `𔒝 𝐋𝐈𝐒𝐓 𝐃𝐄 𝐃𝐄𝐒𝐂𝐀𝐑𝐆𝐀𝐒 𔒝`,
@@ -43,25 +41,25 @@ const handler = async (m, { conn, command, args, text, usedPrefix }) => {
           header: "⫹⫺ 𝐃𝐄𝐒𝐂𝐀𝐑𝐆𝐀𝐑 𝐀𝐔𝐃𝐈𝐎",
           title: "𔓕 𝒅𝒆𝒔𝒄𝒂𝒓𝒈𝒂𝒓.",
           description: `✎ Audio en formato normal.`,
-          id: `#audio ${url}`,
+          id: `#audio ${yt_play[0].url}`,
         },
         {
           header: "⫹⫺ 𝐃𝐄𝐒𝐂𝐀𝐑𝐆𝐀𝐑 𝐕𝐈𝐃𝐄𝐎",
           title: "𔓕 𝒅𝒆𝒔𝒄𝒂𝒓𝒈𝒂𝒓.",
           description: `✎ Video en formato normal.`,
-          id: `#video ${url}`,
+          id: `#video ${yt_play[0].url}`,
         },
         {
           header: "⫹⫺ 𝐀𝐔𝐃𝐈𝐎 𝐃𝐎𝐂𝐔𝐌𝐄𝐍𝐓𝐎",
           title: "𔓕 𝒅𝒆𝒔𝒄𝒂𝒓𝒈𝒂𝒓.",
           description: `✎ Audio en formato de documento.`,
-          id: `#ytmp3doc ${url}`,
+          id: `#ytmp3doc ${yt_play[0].url}`,
         },
         {
           header: "⫹⫺ 𝐕𝐈𝐃𝐄𝐎 : 𝐃𝐎𝐂𝐔𝐌𝐄𝐍𝐓𝐎",
           title: "𔓕 𝒅𝒆𝒔𝒄𝒂𝒓𝒈𝒂𝒓.",
           description: `✎ Video en formato de documento.`,
-          id: `#ytmp4doc ${url}`,
+          id: `#ytmp4doc ${yt_play[0].url}`,
         },
       ]
     }];
